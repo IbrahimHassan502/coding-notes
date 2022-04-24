@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ======== header starts ======== -->
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="index.html">HTML</a></li>
+            <li><a href="css.html">css</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ======== header ends ======== -->
+    <!-- ======== JavaScript NOTES STARTS ========  -->
+    <article class="js-notes">
+      <div class="container">
+        <h2 class="main-heading">JS notes <time datetime="2021">2021</time></h2>
+        <ul>
+          <li>
+            <span class="second-color">DOM</span> and all of its objects like
+            window are not in the core JS just like console they are
+            <em>web APIs</em> or <em>host objects</em> provided by the browser
+            engine for the language to manipulate.
+          </li>
+
+          <li>
+            each browser has it's own JS engine or interpreter understands and
+            executes the language.
+            <ul>
+              <li>Google has: <b>v8</b> engine</li>
+              <li>FireFox has: <b>spider</b> monkey engine</li>
+              <li>Edge has: <b>chakra</b> engine</li>
+            </ul>
+            And just like humans each engine differes in how it understand the
+            language and how fast it understands.So not all new features are
+            immediately implemented.
+            <p>
+              So preformance of JS depends on the host environment which is the
+              browser or more specifically the engine which compiles the codes.
+            </p>
+          </li>
+
+          <li>
+            <span class="code-btn">array.push();</span> returns the new length
+            of the array.
+          </li>
+
+          <li>
+            <span class="code-btn">array.pop();</span> returns the removed
+            element from the array.
+          </li>
+
+          <li>
+            <span class="code-btn">.getElementsByClassName();</span> and
+            <span class="code-btn">.getElementsByByTagName();</span>
+            <b>they don't return an array</b> but they return an array-like
+            called <span class="second-color">HTML collectoin</span>.
+            <p>
+              While <span class="code-btn">.querySelector();</span> returns
+              <span class="second-color">Node list</span>
+              <b
+                >which you can't itterate over using
+                <span class="code-btn">.map()</span></b
+              >
+              method but you can itterate over it by
+              <span class="code-btn">.forEach()</span> but it's not well
+              supported (according to FWD). So you can use
+              <span class="code-b">for..of loop</span> or you can just use a
+              basic <span class="code-btn">for loop</span>.
+            </p>
+          </li>
+
+          <li>
+            the image below demonstrates how
+            <span class="second-color">JS is parsed</span> the browser after
+            recieving the code from the server.
+            <img src="images/js-parse.png" alt="" />
+          </li>
+
+          <li>
+            <span class="code-btn">.getElementsByClassName();</span> both
+            document and elements has this mehtod in their
+            <span class="second-color">interface</span> (and both inherit from
+            the Node interface).
+            <p>
+              interface is the Class or the blueprint (that has all the
+              probreties and the methods (functionality of the object)) while
+              whatever made out of that class is called object.
+            </p>
+            So document and elements both have the
+            <span class="code-btn">.getElementsByClassName();</span> method
+            means if you call the mehod on an element you get the sub-elements
+            (the children elements) by the class you called.
+            <img src="images/sub-elements-js.png" alt="" />
+          </li>
+
+          <li class="big-item">
+            <h3>.textContent VS .innerText</h3>
+            <p>
+              <b class="second-color">textContent: </b> returns the text of the
+              element (and it's decendents) as it is in the HTML (regradless of
+              the css).
+            </p>
+            <p>
+              <b class="code-btn">innerText: </b> returns the text as it will be
+              seen <b>visually</b> meaning it consideration.
+            </p>
+          </li>
+
+          <li class="big-item">
+            <p>
+              if you have an element with div (say the id is "hello"), you can
+              access the element by the id
+              <span class="second-color">without declaration</span>
+            </p>
+            <p>
+              meaning if you directly write console.log(hello), it will return
+              the element in the console.
+              <span class="bg-second-color">
+                as long as you don't have variable with the same name in your
+                javascript
+              </span>
+            </p>
+          </li>
+
+          <li class="big-item">
+            in javascript there are two ways to write a
+            <span class="second-color">date</span>:
+            <ol>
+              <li>
+                <span class="code-btn">new Date(2021, 1, 25)</span>: here the
+                month is februry (number 2 not 1) as in this case month numbers
+                start from 0 to 11.
+                <div class="bg-second-color">
+                  <p>
+                    if type 12 in the month it will be janurary from the nex
+                    year
+                  </p>
+                  <p>Date(1990, 12, 1) will return January 1st, 1991</p>
+                </div>
+              </li>
+              <li>
+                <span class="code-btn">new Date('2021-1-25')</span>: here the
+                month is janurary (same number as written) as in this case the
+                month numbers start from 1 to 12 like normal.
+              </li>
+            </ol>
+          </li>
+
+          <li class="big-item">
+            <span class="code-btn">.insertAdjacentHTML(place, text)</span> lets
+            you add text or (elements) in the place you specify as the first
+            argument. place can be one the folloing four places:
+            <ul>
+              <li>
+                <span class="code-b">beforebegin</span>
+              </li>
+              <li>
+                <span class="code-b">afterbegin</span>
+              </li>
+              <li>
+                <span class="code-b">beforeend</span>
+              </li>
+              <li>
+                <span class="code-b">afterend</span>
+              </li>
+            </ul>
+            for more illustration please visit MDN documentation for it.
+          </li>
+
+          <li class="big-item">
+            <h3>how compareson works under the hood</h3>
+            <img src="images/compareson.png" alt="" />
+            <img src="images/compareson2.png" alt="" />
+            <p class="bg-second-color">
+              The output is true and false. Here is the explanation, In
+              Javascript relational operators are evaluated from left to right,
+              false equals 0, and true equals 1 for number comparisons. So
+              comparison evaluation is something like this,
+            </p>
+            <img src="images/compareson3.png" alt="" />
+          </li>
+
+          <li class="big-item">
+            <h3>++i VS i + 1</h3>
+            <p>in the code you may want to change how the i is showed in the code so you want when the i is 0 it is showed as 1</p>
+            <p>in case of <span class="second-color">++i</span>: it changes the <span class="second-color">actual</span>value of the i so you will notice it's skipping a value each iteration</p>
+            <p>but in case of <span class="second-co">i + 1</span>: you're simply using the value of i and adding 1 to it</p>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <!-- ======== JavaScript NOTES ENDS ========  -->
+
+    <!-- ======== JavaScript runtime starts ========  -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">A JavaScript runtime</h2>
+        <h3>Synonyms: Host environment</h3>
+        <p>
+          The environment in which the JavaScript code runs and is interpreted
+          by a JavaScript engine.The runtime provides the host objects that
+          JavaScript can operate on and work with.
+        </p>
+        <p>
+          The JavaScript runtime is the “existing entity or system” mentioned in
+          the scripting language definition. Code passes through the JavaScript
+          engine, and once parsed and understood, an entity or system performs
+          the interpreted actions. A dog walks, a person runs, a video game
+          character jumps or in the case of the above image, wrecks.
+          Applications make themselves available to JavaScript scripting by
+          providing “host objects” at runtime. For the client side, the
+          JavaScript runtime would be the web browser, where host objects like
+          windows and HTML documents are made available for manipulation. Have
+          you ever worked with the window or document host objects? The window
+          and document objects are not actually a part of the core JavaScript
+          language. They are Web APIs, objects provided by a browser acting as
+          JavaScript's host environment. For the server side, the JavaScript
+          runtime is Node.js. Server-related host objects such as the file
+          system, processes, and requests are provided in Node.js. An
+          interesting point: different JavaScript runtimes can share the same
+          JavaScript engine. V8, for example, is the JavaScript engine used in
+          both Google Chrome and Node.js — two very different environments.
+        </p>
+      </div>
+    </article>
+    <!-- ======== JavaScript runtime ends ========  -->
+
+    <!-- ======== hoisting starts ========  -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">hoisting</h2>
+        <p>
+          hoisting means putting something up and in code it means putting a
+          piece of code in the begging of the script
+        </p>
+        <p>
+          hoisting can be observed in JS when calling a <b>function</b> before
+          declargin it what happen is that when JS is interpreted all function
+          and variables declration are hoisted to the top of the code so the
+          interpreter now knows the function you called before declaring it.
+        </p>
+        <p>
+          with variable hoisting there is a trick
+          <b>only the declration is hoisted</b> not the assignment so if you
+          write <span class="code-btn">var x = 5;</span> what is actually
+          hoisted is <span class="code-b">var x;</span> and the assignment
+          <span class="code-btn">x = 5;</span> stayes where it is.
+        </p>
+        <p>
+          <b>keep that in mind when assigning a function to a variavle</b>
+        </p>
+      </div>
+    </article>
+    <!-- ======== hoisting ends ========  -->
+
+    <!-- ======== similar functions but different starts ========  -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">same name same job but not same function</h2>
+
+        <p>
+          if you declare a function with somename say (myFun) and made do
+          something say(console.log('hola');) and then made another function
+          with the exatct same name and the same job they are not actually the
+          same name.
+        </p>
+
+        <p>
+          analogy to help you understand this is housed you can have two similar
+          houses with even the same furniture but they don't have the same
+          address and they simply not the same house.
+        </p>
+        <p>
+          <b class="second-color">why is this usuful to know?</b>
+        </p>
+        <p>it's usuful in the case shown in the image below.</p>
+        <img src="images/200-functoins.png" alt="" />
+        <p>
+          this code makes 200 hunderd <em>differen</em> functions that basically
+          do the same thing.
+        </p>
+        <img src="images/200-functions-illustration.jpg" alt="" />
+        <p>
+          so the best practice is to actually use the same function like shown
+          in the image below.
+        </p>
+        <img src="images/function-bestPractice.png" alt="" />
+        <img src="images/function-bestPractice-illustratoin.png" alt="" />
+
+        <p class="bg-second-color">
+          or even better is to set the eventlistenr on the parent as after you
+          made it the same function there still a 200 eventlistenr.
+        </p>
+        <img src="images/more-function-besPracitce.jpg" alt="" />
+        <p class="bg-second-color">
+          <b>note:</b> same thing goes with objects having the same probreties
+          with the same value doesn't meant they are the same thing.
+        </p>
+      </div>
+    </article>
+    <!-- ======== similar functions but different ends ========  -->
+
+    <!-- ======== for loop family starts ========  -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">the For loop family</h2>
+        <ul class="big-items">
+          <li>
+            <h3>for loop</h3>
+            <img src="images/for-in-loop.png" alt="" />
+            <p><b class="second-color">the problem is: </b></p>
+            <ol>
+              <li>you have te keep track on the <b>counter</b> (i)</li>
+              <li>
+                you have to make an <b>exit condition</b> based on the
+                <span class="code-btn">length</span> of the array
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>for..in loop</h3>
+            <img src="images/for-in-loop.png" alt="" />
+            <p>
+              <b class="second-color">pros: </b>
+              it dealt with the <b>exit conditoin</b> problem
+            </p>
+            <b>the problem is: </b>
+            <ol>
+              <li>
+                you notice the "index" variable is an actul index
+                <b>not the element itself</b>
+              </li>
+              <li>
+                if you add a new method to the prototype of the array like the
+                image below this added method will shown up.
+                <!-- <img src="images/add-array-method.png" alt="" />
+                <img src="images/add-array-method-output.png" alt="" /> -->
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>for..each</h3>
+            <img src="images/foreach-loop.png" alt="" />
+            <b>the problem is: </b>
+            <ol>
+              <li>
+                it was made <b>only</b> for arrays so it can't be used with any
+                other iterable type of data
+              </li>
+              <li>
+                you can't break out of the loop based on some sort of condition
+                and if you need to do that you have to use the basic for loop
+                (according to fwd course on Udacity)
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>for..of loop</h3>
+            <img src="images/for-of-loop.png" alt="" />
+            <p><b class="second-color">pros:</b></p>
+            <ol>
+              <li>
+                it dealt with the <b>index</b> problem as you notice the
+                variable "digits" is the actual element in the array not it's
+                index.
+              </li>
+              <li>
+                it can be used with any iterable data type not just arrayes
+              </li>
+              <li>
+                you can break or stop the loop or skip an element (the last one
+                is my opinoin based on the photo fwd provided)
+                <img src="images/break-for-of-loop.png" alt="" />
+              </li>
+              <li>
+                it deals with the new methods added to the prototype by shown in
+                the loop (happens with the
+                <span class="code-btn">for..in</span>).
+                <img src="images/proto-w-for-of.png" alt="" />
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <!-- ======== for loop family ends ========  -->
+
+    <!-- ======== scripting-vs-programming STARTS ========  -->
+    <article class="scripting-vs-programming">
+      <h2 class="main-heading">Scripting languages VS Programming languages</h2>
+      <div class="container grid">
+        <h3>Sctipting language</h3>
+        <h3>Programming language</h3>
+        <div class="box">
+          Is a <b>type of programming language</b> that supports scripts, which
+          are small programs mainly used to automate the execution of a specific
+          function in a specific runtime environment.
+          <p>Runtime is the environment where the script is excuted</p>
+        </div>
+        <div class="box">
+          Is a computer language which is used to communicate with computers
+          using a set of instructions.And is compiled to the machine language
+          via a
+          <b>compiler</b>
+        </div>
+        <div class="box">
+          <b>deals with programs.</b>
+        </div>
+        <div class="box">
+          <b>deals with the machine.</b>
+        </div>
+        <div class="box">
+          the script is compiled <b>line by line</b>
+          <p>
+            <strong>
+              Please note that the overall time the interpreter tekes to compile
+              a script is more than the compiler which means the interpreter is
+              slower
+            </strong>
+          </p>
+        </div>
+        <div class="box">the whole programm is compiled <b>at on shot</b></div>
+        <div class="box">
+          <h3>disadvantages</h3>
+          Is shown in the source code so it can't contain important (senstive)
+          information
+        </div>
+        <div class="box">
+          <h3>disadvantages</h3>
+        </div>
+        <div class="box">
+          <h3>advantages</h3>
+          <ul>
+            <li>
+              Take away the difficulty of compiling and linking.
+              <p>
+                Since scripting languages are interpreted and not compiled they
+                don't have the issue of compiling and then linking the source
+                code.
+              </p>
+            </li>
+            <li>
+              Most of the network administrators know how to write scripts.
+              <p>
+                Since the script can be easy to learn, most of the network
+                administrators know how to write scripts.
+              </p>
+            </li>
+            <li>
+              Being a client-side can reduce the demand on the webserver.
+              <p>
+                Since scripts can be both client and server-side, they can be
+                helpful in their respective places. If scripts are client-side
+                they can help in reducing the server demand since all the
+                processing is done on the client machine.
+              </p>
+            </li>
+            <li>
+              Not interpreted the same way cross browser.
+              <p>since each browser has it's own engine (interpreter).</p>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>advantages</h3>
+        </div>
+      </div>
+      <div class="container">
+        But at the end both languages are trnaslated into machine language the
+        difference is
+        <ul>
+          <li>
+            <b>compiler:</b> always generates an intermediary object code
+            (.exe). It will need further linking. Hence more memory is needed.
+          </li>
+          <li>
+            <b>interpreter:</b> does not generate an intermediary code. Hence,
+            an interpreter is highly efficient in terms of its memory.
+            <p>
+              <b>
+                It interprets the script line by line of instructions into
+                machine code while doing the execution right away.
+              </b>
+            </p>
+          </li>
+        </ul>
+        <q>
+          Both Interpreter and Compiler convert source code into machine code.
+          However, a compiler will convert the code into machine code (create a
+          .exe) before the program run. Interpreters convert code into machine
+          code when the program is run.
+        </q>
+      </div>
+    </article>
+    <!-- ======== scripting-vs-programming ENDS ========  -->
+
+    <!-- ======== DEV-TOOLS STARTS ========  -->
+    <article class="dev-tools">
+      <div class="container">
+        <h2 class="main-heading">Chrome Dev tools</h2>
+        <ul>
+          <li>
+            <b>to take screenshot:</b>
+            <ol>
+              <li>
+                open command by pressing
+                <span class="code-btn"> ctrl + shift + p </span>
+              </li>
+              <li>write <b>screenshot</b></li>
+            </ol>
+          </li>
+          <li>
+            <b>inspect element keyboard shortcut:</b>
+            <span class="code-btn"> ctrl + shift + c </span>
+          </li>
+          <li>
+            <b>select the parent element keyboard shortcut:</b>
+            while on the element in the inspector press
+            <span class="code-btn"> left arrow &leftarrow;</span>
+          </li>
+          <li>
+            <b>folding element in the inspector</b>
+            while on the element press
+            <span class="code-btn"> left arrow &leftarrow;</span>
+          </li>
+          <li>
+            <b>Unfolding element in the inspector</b>
+            while on the element press
+            <span class="code-btn"> right arrow &rightarrow;</span>
+          </li>
+          <li>
+            <b>re-order DOM elements by: </b>
+            dragging the element in the dom tree in the inspector using your
+            mouse
+          </li>
+          <li>
+            <b>hiding dom element: </b>
+            while on the element in inspector press
+            <span class="code-btn">H</span>
+          </li>
+          <li>
+            <b>deleting dom element: </b>
+            while on the element in inspector press
+            <span class="code-btn">delete</span>
+          </li>
+          <li>
+            <b>edit dom element as html keyboard shortcut: </b>
+            <span class="code-btn">F2</span>
+          </li>
+          <li>
+            <b>
+              Cycle through the RBGA, HSLA, and Hex representations of a color
+              value:
+            </b>
+            <span class="code-btn">shift + click the color box</span>
+          </li>
+          <li>
+            <b> Increment / decrement a property value by 0.1: </b>
+            <span class="code-btn">shift + arrow up &UpArrow;</span>
+          </li>
+          <li>
+            <b> Increment / decrement a property value by 100: </b>
+            <span class="code-btn">CTRl + arrow up &UpArrow;</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <!-- ======== DEV-TOOLS ENDS ========  -->
+
+    <!-- ======== performance starts ======== -->
+    <article class="tbt">
+      <h2 class="main-heading">performance</h2>
+      <div class="container">
+        <h3 class="main-heading">
+          total blocking time (TBT) & first input delay (FID)
+        </h3>
+        <section>
+          <h3>FID</h3>
+          <p>
+            when the broswer is loading the page and the user takes an action
+            that's the first input but since the browser is loading the page so
+            it may be doing a <span class="second-color">task</span> and tasks
+            can't be interrupter so the browser ignores the user utnil it
+            finishes the task then do the action the uesr wants and this is
+            first input delay.
+          </p>
+        </section>
+        <section>
+          <h3>TBT</h3>
+          <p>
+            since FID is depenedant on the user like you and myself so it's
+            almost unmeasured since I may decide to take different action in
+            different time (during the loading) than you.
+          </p>
+          <p>
+            so they decided instead that the standard (maximum) delay is
+            <span class="second-color">50ms</span> and any task takes more time
+            than this, this time (time after 50ms) is called
+            <span class="second-color">blocking time</span>.
+          </p>
+          <p>
+            so total blokcing time is the sum of the blocking time from all the
+            tasks in the page like shown in the image below.
+          </p>
+          <img src="images/TBT-tasks.svg" alt="" />
+          <img src="images/TBT-blockingTime.svg" alt="" />
+          <img src="images/TBT-timeTable.png" alt="" />
+          <p>
+            so in technical speeking TBT doesn't measure FID as it's likely not
+            possible to measure it, but instead if you decrease the TBT it
+            decreases the possibility of big FID happening.
+          </p>
+        </section>
+        <section>
+          <h3>decrease TBT</h3>
+          <p>
+            well... couple of methods and tehcnique were mentioned like
+            <span class="second-color">minifying</span> css and JS and other
+            methods put I didn't feel like I came across those things (like
+            serever delay and stuff like that) so I didn't just copy past
+            something I don't fully understand and probably won't even remember.
+          </p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== performance ends ======== -->
+
+    <!-- ======== Modules starts ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">modules</h2>
+        simply small chunks of javascript (like having module for navbar and
+        footer to put them in all the different pages of the website)
+      </div>
+    </article>
+    <!-- ======== Modules ends ======== -->
+
+    <!-- ======== async VS defer starts ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">async VS defer</h2>
+        <p>
+          at the begning you should know that those two matter only when you put
+          your <span class="code-btn">script tag</span> in the
+          <span class="code-btn">head</span>
+        </p>
+        <h3>in the normal situation:</h3>
+        <p>
+          the parser goes on your code and parse it line by line when it goes to
+          the script tag in the head it parses all the javascript and excute it
+          before it continues parsing the html in what is called
+          <span class="second-color">parser-blocking javascript</span>.
+        </p>
+        <p>
+          the image below will illustrate the difference in the behaviour
+          between normal script tag and with async attribute and with defer
+          attribute.
+          <span class="bg-second-color">
+            all three the script tag is in the head
+          </span>
+        </p>
+        <img src="images/async-defer.png" alt="" />
+        <h3>in both cases</h3>
+        <p>
+          in both cases the javascript file is downloaded parallel with the html
+          parsing elemenating parser-blocking javascript.
+        </p>
+        <h3>async:</h3>
+        <p>
+          in case of async the javascript is excuted as soon as it is available
+          which means sometimes it can be excuted before the parsing is complete
+          which blocks it. and some other times it will be excuted after the
+          parsing is complete depending on how fast your internet connection
+        </p>
+        <h3>defer:</h3>
+        <p>
+          in defer case the javascript is
+          <span class="second-color">always</span> excuted after the html is
+          parsed and before the document is done which fires the
+          <span class="code-btn">DOMContentLoaded</span> event.
+        </p>
+        <blockquote class="bg-second-color">
+          The DOMContentLoaded event fires when the initial HTML document has
+          been completely loaded and parsed, without waiting for stylesheets,
+          images, and subframes to finish loading.
+        </blockquote>
+      </div>
+    </article>
+    <!-- ======== async VS defer ends ======== -->
+
+    <!-- ======== elzero 2022 starts ======== -->
+    <article class="elzero">
+      <div class="container">
+        <h2 class="main-heading">elzero 2022</h2>
+        <section>
+          <h3>24- Number methods</h3>
+          <div>
+            <p>(100).toString(); => "100"</p>
+            <p>100..toString(); => "100"</p>
+            <p class="bg-second-color">
+              the extra dot is for the editor as it expects something like 100.5
+              so you put the extra dot to tell it it's for the function
+            </p>
+          </div>
+          <div>
+            <p>100.55555.toFixed(2); => 100.56</p>
+          </div>
+          <div>
+            <p>parseInt("100"); => 100</p>
+            <p>parseInt("100px"); => 100</p>
+            <p>parseInt("px100"); => NaN</p>
+            <p>parseInt("100.55"); => 100</p>
+          </div>
+          <div>
+            <p>parseFloat("100.55px"); => 100.55</p>
+          </div>
+          <div>
+            <p>Number.isInteger("100"); => false</p>
+            <p>Number.isInteger(100); => true</p>
+            <p>Number.isInteger(100.55); => false</p>
+          </div>
+          <div>
+            <p>Nubmer.isNan(100); => false</p>
+            <p>Nubmer.isNan("lol"); => true</p>
+          </div>
+          <div>
+            <p>Number("100px"); => NaN</p>
+            <p>Number("100"); => 100</p>
+            <p>Number("100.4"); => 100.4</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>25- Math object</h3>
+          <div>
+            <p>Math.round(99.2); => 99</p>
+            <p>Math.round(99.5); => 100</p>
+          </div>
+          <div>
+            <p>Math.ceil(99.2); => 100</p>
+            <p>Math.floor(99.9); => 99</p>
+          </div>
+          <div>
+            <p>Math.min(10, 20, 100, -100, 90); => -100</p>
+            <p>Math.max(10, 20, 100, -100, 90); => 100</p>
+          </div>
+          <div>
+            <p>Math.pow(2, 4); => 16</p>
+          </div>
+          <div>
+            <p>Math.random()</p>
+          </div>
+          <div>
+            <p>Math.trunc(99.5); => 99</p>
+            <p>Math.trunc(99.2); => 99</p>
+            <p class="bg-second-color">returns the integer number</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>26- math challenge</h3>
+        </section>
+
+        <section>
+          <h3>27- string methods</h3>
+          <div>
+            <p>'hola'[0] => h</p>
+            <p>'hola'[2] => l</p>
+          </div>
+          <div>
+            <p>'hola'.charAt(0) => h</p>
+            <p>'hola'.charAt(2) => l</p>
+          </div>
+          <div>
+            <p>'hola'.length => 4</p>
+          </div>
+          <div>
+            <pre>' hola '.trim() => 'hola'</pre>
+          </div>
+          <div>
+            <p>'hola'.toUpperCase() => HOLA</p>
+            <p>'hola'.toLowerCase() => hola</p>
+          </div>
+          <div>
+            <pre>' hola '.trim().charAt(2).toUpperCase() => L</pre>
+          </div>
+        </section>
+
+        <section>
+          <h3>28- string methods part 2</h3>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.indexOf("Web");</span>
+              => 7
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn"
+                >.indexOf("Web", 8);</span
+              >
+              => -1 (which means error or didn't find what you looking for) and
+              (the second argument "8" is the start of searching and it's
+              optional)
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.indexOf("o");</span> =>
+              5
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn"
+                >.lastIndexOf("o");</span
+              >
+              => 15
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.slice(2, 6)</span> =>
+              "zero" (last index is not included so the space after the "o"
+              wasn't included) and (both arguments are indexes)
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.slice(-5, -3);</span>
+              => "ch" (when negative numbers it starts from -1 not -0 obvisly)
+              and (still last index is not included)
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.slice(6, 2);</span> =>
+              if the first argument is greater than the second it returns
+              <span class="bg-second-color">empty string ''</span>.
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.repeat(5);</span> =>
+              "Elzero Web SchoolElzero Web SchoolElzero Web SchoolElzero Web
+              SchoolElzero Web School"
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.split("", 6);</span> =>
+              ['E', 'l', 'z', 'e', 'r', 'o'] (6 here is length of the array not
+              an index. the length is 6 it stops at index 5)
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.split(" "); =></span>
+              ['Elzero', 'web', 'school']
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>29- string method part 3</h3>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.subString(2, 6);</span>
+              => "Elzero" (last index not included)
+            </p>
+          </div>
+          <div>
+            <h3>
+              difference between
+              <span class="code-btn">.subString() and .slice()</span>
+            </h3>
+            <p>
+              "Elzero Web School"<span class="code-btn">.substring(6, 2);</span>
+              => "Elzero" (it switches the two argument in case the first one is
+              greater than the second one so behind the scenes its (2, 6))
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.slice(6, 2);</span> =>
+              <span class="bg-second-color">nothing</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-bt">
+                .substring(-10, 9);
+              </span>
+              => "Elzero web" (any negative value is treated as 0 so behind
+              scenes it's (0, 6))
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-bt">.slice(-10, 9);</span>
+              => "We"
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code"
+                >.substring(a.length - 5, a.length - 3);</span
+              >
+              => "ch"
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.substr(0, 6);</span> =>
+              "Elzero" (the second argument is a length not an index) and (the
+              second argument is optional if you don't type it starts from the
+              first argument until the end the of the string)
+            </p>
+            <p>
+              <strong
+                >note that it's depercated and the quote below is from
+                MDN</strong
+              >
+            </p>
+            <p class="bg-second-color">
+              <q>
+                <strong>Deprecated:</strong> This feature is no longer
+                recommended. Though some browsers might still support it, it may
+                have already been removed from the relevant web standards, may
+                be in the process of being dropped, or may only be kept for
+                compatibility purposes. Avoid using it, and update existing code
+                if possible; see the compatibility table at the bottom of this
+                page to guide your decision. Be aware that this feature may
+                cease to work at any time.
+              </q>
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.substr(-3);</span> =>
+              "ool"
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.substr(-5, 2);</span>
+              => "ch"
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn">.substr(-5, -2);</span>
+              => "" (it doesn't take negative lengths)
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-b">.includes("Web");</span>
+              => true
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-b"
+                >.includes("Web", 8);</span
+              >
+              => false (the second argument is starting index and optional)
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.startsWith("E");</span>
+              => true
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn"
+                >.startsWith("E", 2);</span
+              >
+              => false
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn"
+                >.startsWith("z", 2);</span
+              >
+              => true
+            </p>
+          </div>
+          <div>
+            <p>
+              "Elzero Web School"<span class="code-btn">.endsWith("l");</span>
+              => true
+            </p>
+            <p>
+              "Elzero Web School"<span class="code-btn"
+                >.endsWith("o", 6);</span
+              >
+              => true (the second argument is a length not an index)
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>30- string challenge</h3>
+        </section>
+
+        <section>
+          <h3>
+            31- Comparison Operators (==, ===, !=, !==, greater than, less than)
+          </h3>
+          <img src="images/compareson.png" alt="" />
+          <img src="images/compareson2.png" alt="" />
+          <p class="bg-second-color">
+            The output is true and false. Here is the explanation, In Javascript
+            relational operators are evaluated from left to right, false equals
+            0, and true equals 1 for number comparisons. So comparison
+            evaluation is something like this,
+          </p>
+          <img src="images/compareson3.png" alt="" />
+          <p>
+            rest of the lesson no need for notes revise it from
+            <a href="https://elzero.org/javascript-2021-comparison-operators/"
+              >elzero.org</a
+            >
+          </p>
+        </section>
+
+        <section>
+          <h3>32 - Logical Operators</h3>
+          <p>
+            Ez no notes neede revise it from
+            <a href="https://elzero.org/javascript-2021-logical-operators/"
+              >elzero.org</a
+            >
+          </p>
+        </section>
+
+        <section>
+          <h3>33 - If Conditions</h3>
+          <p>
+            note that the <span class="code-btn">else if () {}</span> will be
+            excuted <span class="bg-second-color">only</span>if the previous
+            condition is false
+          </p>
+          <p>
+            rest of the lesson doesn't need notes taken revise from
+            <a href="https://elzero.org/javascript-2021-if-conditions/"
+              >elzero.org</a
+            >
+          </p>
+        </section>
+        <section>
+          <h3>34 - nested if condtion</h3>
+          <p>
+            no notes needed revise the lesson from
+            <a href="https://elzero.org/javascript-2021-nested-if-conditions/"
+              >elzero.org</a
+            >
+          </p>
+        </section>
+
+        <section>
+          <h3>35 - Conditional ternary Operator</h3>
+          <p>in case you want to have else if with ternary:</p>
+          <img
+            src="images/multi-condition-ternary.png"
+            widht="600"
+            height="200"
+            alt=""
+          />
+          <p>
+            revise rest of the lesson
+            <a
+              href="https://elzero.org/javascript-2021-conditional-ternary-operator/"
+              >elzero.org</a
+            >
+          </p>
+        </section>
+
+        <section>
+          <h3>36 - Nullish Coalescing Operator & Logical Or</h3>
+          <div>
+            <h3>logical or ||</h3>
+            <p>console.log(`The Price Is ${price || 200}`);</p>
+            <p>
+              the code above will return 200 if the price is one of the options
+              below:
+            </p>
+            <ul>
+              <li>null</li>
+              <li>undefind</li>
+              <li>false</li>
+              <li>''</li>
+              <li>0</li>
+              <li>or any falsey value</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Nullish Coalescing Operator ??</h3>
+            <p>console.log(`The Price Is ${price ?? 200}`);</p>
+            <p>the code above returns 200 if price is either:</p>
+            <ul>
+              <li>null</li>
+              <li>undefind</li>
+            </ul>
+            <p>
+              and <span class="second-color">and only</span>if the variable
+              equals to either one of those not any other fasley value
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>37 - If Condition Challenge</h3>
+        </section>
+
+        <section>
+          <h3>38 - Switch Statement</h3>
+          <div>
+            <p>
+              note that swich compares with
+              <span class="second-color">identical operator</span>
+            </p>
+            <p>
+              meaning that if your variable is like this
+              <span class="code-btn">let myvar = "5"</span>
+            </p>
+            <p>
+              this is a string variable not a number so the write
+              <span class="code-btn">case 5:</span> it won't work
+            </p>
+            <p>
+              if you write <span class="code-btn">case "5":</span> it will work
+            </p>
+          </div>
+          <div>
+            <p>
+              you can put the <span class="code-btn">default:</span> statement
+              anywhere you want just make sure you put a
+              <span class="code-btn">break;</span> statement with it
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>label in foor loops</h3>
+          <p>
+            if you have a loop nested in a main loop and you want to break the
+            main loop based on a condition in the nested loop ... if you put
+            just <span class="code-btn">break;</span> in the nested loop it will
+            just break the nested loop here comes the use of labels
+          </p>
+          <img src="images/for-label.png" alt="" />
+          <p>
+            so in the first assumption that you just write
+            <span class="code-btn">break;</span> it will be excatly like
+            <span class="code-btn">break nestedLoop;</span>
+          </p>
+        </section>
+
+        <section>
+          <h3></h3>
+        </section>
+      </div>
+    </article>
+    <!-- ======== elzero 2022 ends ======== -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
