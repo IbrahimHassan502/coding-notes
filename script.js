@@ -1,16 +1,22 @@
-let friends = ["Ahmed", "Sayed", "Ali", 1, 2, "Mahmoud", "Amany"];
-let index = 0;
-let counter = 0;
+let holidays = 0;
+let money = 0;
 
-while (index < friends.length) {
-  console.log(index);
-  if (
-    friends[index].toString().startsWith("A") ||
-    typeof friends[index] === "number"
-  ) {
-    index++;
-    continue;
-  }
-  console.log(friends[index]);
-  index++;
+switch (holidays) {
+  case 0:
+    money = 5000;
+    break;
+  case 1:
+  case 2:
+    money = 3000;
+    break;
+  case 3:
+    money = 2000;
+    break;
+  case 4:
+    money = 1000;
+    break;
+  case 5:
+    money = 0;
+    break;
 }
+console.log(`My Money is ${money}`);

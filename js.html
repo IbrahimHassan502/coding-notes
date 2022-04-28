@@ -200,9 +200,19 @@
 
           <li class="big-item">
             <h3>++i VS i + 1</h3>
-            <p>in the code you may want to change how the i is showed in the code so you want when the i is 0 it is showed as 1</p>
-            <p>in case of <span class="second-color">++i</span>: it changes the <span class="second-color">actual</span>value of the i so you will notice it's skipping a value each iteration</p>
-            <p>but in case of <span class="second-co">i + 1</span>: you're simply using the value of i and adding 1 to it</p>
+            <p>
+              in the code you may want to change how the i is showed in the code
+              so you want when the i is 0 it is showed as 1
+            </p>
+            <p>
+              in case of <span class="second-color">++i</span>: it changes the
+              <span class="second-color">actual</span>value of the i so you will
+              notice it's skipping a value each iteration
+            </p>
+            <p>
+              but in case of <span class="second-co">i + 1</span>: you're simply
+              using the value of i and adding 1 to it
+            </p>
           </li>
         </ul>
       </div>
@@ -711,6 +721,48 @@
       <div class="container">
         <h2 class="main-heading">elzero 2022</h2>
         <section>
+          <h3>19- Unray operators (plus and negative)</h3>
+          <p>it's used to turn string into number</p>
+          <p>
+            console.log(<span class="code-btn">+"100"</span>) => 100 as a number
+          </p>
+          <h3>unary operators VS number() Vs parseInt()</h3>
+          <p>
+            according to the best answer in
+            <a
+              href="https://stackoverflow.com/questions/52468051/is-there-any-reason-not-to-use-the-plus-operator-instead-of-number-or-parseint#:~:text=parseInt%20parses%20the%20string%20up,the%20number%20if%20it%20can."
+              >stack overflow</a
+            >
+            unary operators and number() are the same they try to change the
+            <span class="second-color">whole string into a number</span>
+          </p>
+          <p>
+            trying <span class="code-btn">console.log(+"100px") </span> will
+            return
+            <span class="second-color">NaN</span>
+          </p>
+          <p>
+            but as for <span class="code-btn">parseInt("100px")</span> it will
+            return <span class="second-color">100</span>
+          </p>
+          <p>
+            as the mechansim of parseInt is it
+            <span class="second-color">keeps</span> returning numbers found in
+            the string untill countring string that is not a number so it
+            ignores all characters after that
+          </p>
+          <p>
+            <span class="second-color">also</span>
+            <span class="code-btn">Number()</span> and
+            <span class="code-btn">unray</span>
+            <span class="second-color">evaluate</span> whatever you give to them
+            for example:
+          </p>
+          <p><span class="code-btn">Number("")</span> => 0</p>
+          <p>where</p>
+          <p><span class="code-btn">parseInt("")</span> => NaN</p>
+        </section>
+        <section>
           <h3>24- Number methods</h3>
           <div>
             <p>(100).toString(); => "100"</p>
@@ -764,6 +816,12 @@
           </div>
           <div>
             <p>Math.pow(2, 4); => 16</p>
+            <p>
+              <span class="second-color">also</span>
+              you can use <span class="code-btn">2**4</span> to give you the
+              same results
+            </p>
+            <p><span class="code-btn">console.log(2**4)</span> => 16</p>
           </div>
           <div>
             <p>Math.random()</p>
@@ -771,7 +829,9 @@
           <div>
             <p>Math.trunc(99.5); => 99</p>
             <p>Math.trunc(99.2); => 99</p>
-            <p class="bg-second-color">returns the integer number</p>
+            <p class="bg-second-color">
+              returns the integer number and removes the decimals
+            </p>
           </div>
         </section>
 
@@ -794,6 +854,9 @@
           </div>
           <div>
             <pre>' hola '.trim() => 'hola'</pre>
+            <p class="bg-second-color">
+              removes the spaces from the start and the end of the string
+            </p>
           </div>
           <div>
             <p>'hola'.toUpperCase() => HOLA</p>
@@ -801,6 +864,9 @@
           </div>
           <div>
             <pre>' hola '.trim().charAt(2).toUpperCase() => L</pre>
+            <p class="bg-second-color">
+              you can use more than one method together
+            </p>
           </div>
         </section>
 
@@ -816,8 +882,10 @@
                 >.indexOf("Web", 8);</span
               >
               => -1 (which means error or didn't find what you looking for) and
-              (the second argument "8" is the start of searching and it's
-              optional)
+              <span class="second-color"
+                >(the second argument "8" is the start of searching and it's
+                optional)</span
+              >
             </p>
             <p>
               "Elzero Web School"<span class="code-btn">.indexOf("o");</span> =>
@@ -838,7 +906,7 @@
             </p>
             <p>
               "Elzero Web School"<span class="code-btn">.slice(-5, -3);</span>
-              => "ch" (when negative numbers it starts from -1 not -0 obvisly)
+              => "ch" (when negative numbers it starts from -1 not -0 obviously)
               and (still last index is not included)
             </p>
             <p>
@@ -857,8 +925,11 @@
           <div>
             <p>
               "Elzero Web School"<span class="code-btn">.split("", 6);</span> =>
-              ['E', 'l', 'z', 'e', 'r', 'o'] (6 here is length of the array not
-              an index. the length is 6 it stops at index 5)
+              ['E', 'l', 'z', 'e', 'r', 'o']
+            </p>
+            <p class="bg-second-color">
+              (6 here is length of the array not an index. the length is 6 it
+              stops at index 5)
             </p>
             <p>
               "Elzero Web School"<span class="code-btn">.split(" "); =></span>
@@ -871,15 +942,20 @@
           <h3>29- string method part 3</h3>
           <div>
             <p>
-              "Elzero Web School"<span class="code-btn">.subString(2, 6);</span>
-              => "Elzero" (last index not included)
+              "Elzero Web School"<span class="code-btn">.substring(2, 6);</span>
+              => "zero" (last index not included)
             </p>
           </div>
           <div>
             <h3>
               difference between
-              <span class="code-btn">.subString() and .slice()</span>
+              <span class="code-btn">.substring() and .slice()</span>
             </h3>
+            <p class="bg-second-color">
+              <span class="code-btn"> .substring() </span> you can switch values
+              with it while with <span class="code-btn">.slice()</span> you
+              can't
+            </p>
             <p>
               "Elzero Web School"<span class="code-btn">.substring(6, 2);</span>
               => "Elzero" (it switches the two argument in case the first one is
@@ -891,16 +967,21 @@
             </p>
           </div>
           <div>
+            <p class="bg-second-color">
+              <span class="code-btn">.substring()</span> treats any negative
+              value as 0 while <span class="code-btn">.slice()</span> deals with
+              negative values normally
+            </p>
             <p>
               "Elzero Web School"<span class="code-bt">
                 .substring(-10, 9);
               </span>
-              => "Elzero web" (any negative value is treated as 0 so behind
-              scenes it's (0, 6))
+              => "Elzero we" (any negative value is treated as 0 so behind
+              scenes it's (0, 9))
             </p>
             <p>
               "Elzero Web School"<span class="code-bt">.slice(-10, 9);</span>
-              => "We"
+              => "W"
             </p>
           </div>
           <div>
@@ -919,10 +1000,14 @@
               first argument until the end the of the string)
             </p>
             <p>
-              <strong
-                >note that it's depercated and the quote below is from
-                MDN</strong
-              >
+              <strong>
+                note that it's depercated and the quote below is from
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr"
+                >
+                  MDN
+                </a>
+              </strong>
             </p>
             <p class="bg-second-color">
               <q>
@@ -977,6 +1062,10 @@
                 >.startsWith("z", 2);</span
               >
               => true
+            </p>
+            <p class="bg-second-color">
+              you can use it to check if a certain character is at certain index
+              or not
             </p>
           </div>
           <div>
@@ -1054,7 +1143,10 @@
 
         <section>
           <h3>35 - Conditional ternary Operator</h3>
-          <p>in case you want to have else if with ternary:</p>
+          <p>
+            in case you want to have <span class="code-btn">else if</span> with
+            ternary:
+          </p>
           <img
             src="images/multi-condition-ternary.png"
             widht="600"
@@ -1073,8 +1165,12 @@
         <section>
           <h3>36 - Nullish Coalescing Operator & Logical Or</h3>
           <div>
-            <h3>logical or ||</h3>
-            <p>console.log(`The Price Is ${price || 200}`);</p>
+            <h3>logical or ( || )</h3>
+            <p>
+              <span class="code-btn"
+                >console.log(`The Price Is ${price || 200}`);</span
+              >
+            </p>
             <p>
               the code above will return 200 if the price is one of the options
               below:
@@ -1083,22 +1179,26 @@
               <li>null</li>
               <li>undefind</li>
               <li>false</li>
-              <li>''</li>
+              <li>""</li>
               <li>0</li>
               <li>or any falsey value</li>
             </ul>
           </div>
           <div>
-            <h3>Nullish Coalescing Operator ??</h3>
-            <p>console.log(`The Price Is ${price ?? 200}`);</p>
+            <h3>Nullish Coalescing Operator ( ?? )</h3>
+            <p>
+              <span class="code-btn"
+                >console.log(`The Price Is ${price ?? 200}`);</span
+              >
+            </p>
             <p>the code above returns 200 if price is either:</p>
             <ul>
               <li>null</li>
               <li>undefind</li>
             </ul>
             <p>
-              and <span class="second-color">and only</span>if the variable
-              equals to either one of those not any other fasley value
+              <span class="second-color">and only</span> if the variable equals
+              to either one of those not any other fasley value
             </p>
           </div>
         </section>
@@ -1119,7 +1219,7 @@
               <span class="code-btn">let myvar = "5"</span>
             </p>
             <p>
-              this is a string variable not a number so the write
+              this is a string variable not a number so if you write
               <span class="code-btn">case 5:</span> it won't work
             </p>
             <p>
@@ -1130,9 +1230,11 @@
             <p>
               you can put the <span class="code-btn">default:</span> statement
               anywhere you want just make sure you put a
-              <span class="code-btn">break;</span> statement with it
+              <span class="code-btn">break;</span> statement with it if you
+              don't put it at the end
             </p>
           </div>
+          <img src="images/switch_syntax.png" alt="" />
         </section>
 
         <section>
