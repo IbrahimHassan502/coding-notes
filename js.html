@@ -878,9 +878,9 @@
               => 7
             </p>
             <p>
-              "Elzero Web School"<span class="code-btn"
-                >.indexOf("Web", 8);</span
-              >
+              "Elzero Web School"<span class="code-btn">
+                .indexOf("Web", 8);
+              </span>
               => -1 (which means error or didn't find what you looking for) and
               <span class="second-color"
                 >(the second argument "8" is the start of searching and it's
@@ -1254,9 +1254,233 @@
         </section>
 
         <section>
-          <h3></h3>
+          <h3>39- Array big introduction</h3>
+          <p>to check if the varibale is array or not</p>
+          <p>
+            console.log(<span class="code-btn">Array.isArray(myArray)</span>)
+          </p>
+        </section>
+
+        <section>
+          <h3>40- Using Length With Array</h3>
+          <p>no notes needed</p>
+        </section>
+
+        <section>
+          <h3>41- Add And Remove From Array</h3>
+          <div>
+            <p>
+              to <span class="second-color">add</span> an element to the
+              <span class="second-color">begning of the array</span>
+            </p>
+            <p>
+              myArray.
+              <span class="code-btn">unshift(element, element, ...)</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              to add an element to the
+              <span class="second-color">end of the array</span>
+            </p>
+            <p>
+              myArray. <span class="code-btn">push(element, element, ...)</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              to <span class="second-color">remove</span> element from the
+              <span class="second-color">begening of the array</span>
+            </p>
+            <p>myArray. <span class="code-btn">shift()</span></p>
+            <p>
+              <span class="second-color">note:</span> shift() method and pop()
+              method return the removed element so you can use it how ever you
+              see, for example
+            </p>
+            <p class="code-btn">let myRemoved = myArray.shift();</p>
+          </div>
+          <div>
+            <p>
+              to <span class="second-color">remove</span> element from
+              <span class="second-color">the end of the array</span>
+            </p>
+            <p>myArray. <span class="code-btn">pop()</span></p>
+          </div>
+          <p class="bg-second-color">
+            <b>Note:</b> all pervious methods make permenant changes on the main
+            array
+          </p>
+        </section>
+
+        <section>
+          <h3>43- Searching Array</h3>
+          <p class="code-btn">
+            let myArray = ["Ahmed", "Mohamed", "Osama", "Ahmed"[
+          </p>
+          <p>to find index of an element in an array</p>
+          <p>myArray. <span class="code-btn">indexOf("Ahmed")</span> => 0</p>
+          <p>
+            myArray. <span class="code-btn">lastIndexOf("element")</span> => 3
+          </p>
+          <p>myArray. <span class="code-btn">indexOf("Ahmed", 2)</span> => 3</p>
+          <p class="bg-second-color">
+            if the element is not found it returns <b>-1</b>
+          </p>
+          <p class="bg-second-color">
+            the second argument is the starting index of the search and it's
+            optional
+          </p>
+          <p class="bg-second-color">
+            <span class="code-btn">indexOf()</span> method wihtout the starting
+            index argument returns the index of the first found value even if
+            the value is in the array twice
+          </p>
+        </section>
+
+        <section>
+          <h3>44- Sorting Arrays</h3>
+          <p class="code-btn">
+            let myArray= [10, "sayed", "mohamed", "90", 1000, 100, 20, "10",
+            -20, -10]
+          </p>
+          <div>
+            <p>myArray. <span class="code-btn">sort()</span> =></p>
+            <p>
+              [-10, -20, 10, "10", 100, 1000, 20, "20", "90", "mohamed",
+              "sayed"]
+            </p>
+            <p class="bg-second-color">
+              the main idea is it sorts the numbers from the smalles to the
+              largest then normal strings in the normal alphabitical order
+            </p>
+            <p class="bg-second-color">
+              but notice that 20 came after 1000 as the method's mechanism is it
+              starts with the figuers starting with 1 and sorts all of them from
+              the smalles to the largest then goes to all figures starting with
+              2 and does the same and so on
+            </p>
+          </div>
+          <div>
+            <p>
+              to reverse the order of the array
+              <span class="code-btn">whatever the order is</span>
+            </p>
+            <p>myArray. <span class="code-btn">.reverse</span> =></p>
+            <p>[-20, -10, "10", 20, 100, 1000, "90", "mohamed", "sayed", 10]</p>
+          </div>
+          <p class="bg-second-color">
+            <b>Note:</b> both previous methods do <b>permenant</b> chnage to the
+            array
+          </p>
+        </section>
+
+        <section>
+          <h3>45- Slicing Array (Slice & Splice)</h3>
+          <p class="code-btn">
+            let myFriends = ["Ahmed", "Sayed", "Ali", "Osama", "Gamal", "Ameer"]
+          </p>
+          <div>
+            <p>to take sub array from this array</p>
+            <p>
+              myFriends.
+              <span class="code-btn">
+                slice( <b> starting index </b>,
+                <b> ending index <i>*not included*</i> </b>)
+              </span>
+            </p>
+            <p>
+              myFriends. <span class="code-btn">slice(0,2)</span> => ["Ahmed",
+              "Sayed"]
+            </p>
+            <p>
+              myFriends. <span class="code-btn">slice(0, -2)</span> => ["Ahmed",
+              "Sayed", "Ali", "Osama"]
+            </p>
+            <p>myFriends. <span class="code-btn">slice(4, 1)</span> => []</p>
+          </div>
+          <div>
+            <p>
+              to <span class="second-color">remove elemnts</span> from the array
+              or remove and add elements at the same time
+            </p>
+            <p>
+              myFriends.
+              <span class="code-btn">
+                splice(
+                <b>starting index</b>,
+                <b>numbers of elements to delete or remove</b>,
+                <b>elements to add</b>
+                )
+              </span>
+            </p>
+            <p>
+              myFriends.
+              <span class="code-btn">splice(0, 1, "marwan", "hussien")</span> =>
+            </p>
+            <p>
+              ["marwan", "hussien", "Sayed", "Ali", "Osama", "Gamal", "Ameer"]
+            </p>
+            <p class="bg-second-color">
+              removed and added items at the same time
+            </p>
+
+            <p>
+              myFriends.
+              <span class="code-btn">splice(2, 0, "marwan", "hussien")</span> =>
+            </p>
+            <p>
+              ["Ahmed", "Sayed", "marwan", "hussien", "Ali", "Osama", "Gamal",
+              "Ameer"]
+            </p>
+            <p class="bg-second-color">just added items without removing</p>
+
+            <p>
+              myFriends.
+              <span class="code-btn">splice(2, 1)</span> =>
+            </p>
+            <p>["Ahmed", "Sayed", "Osama", "Gamal", "Ameer"]</p>
+            <p class="bg-second-color">
+              just removed element without adding any
+            </p>
+            <p class="bg-second-color">
+              <b>Note: </b> removed elements by splice() are returned so you can
+              sotre them in a variable or console them or whatever
+            </p>
+            <p class="bg-second-color">
+              <b>Note: </b> splice makes a <b>permenant</b> change on the array
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>46- Joining Arrays</h3>
+          <div>
+            <p>
+              you can use <span class="code-btn">.concat()</span> method to add
+              (pre declared arrays, elements or made up arrays) to some array
+            </p>
+            <p class="code-btn">
+              let allFriends = myFriends.<b>
+                concat(myNewFriends, schoolFriends, "Gameel", [1, 2])
+              </b>
+            </p>
+          </div>
+          <div>
+            <p>to join all the array elements in one string</p>
+            <p><span class="code-btn">.join(<b>separator</b>)</span></p>
+            <p>
+              myFriends. <span class="code-btn">join("|")</span> =>
+              Ahmed|Sayed|Ali|Osama|Gamal|Ameer
+            </p>
+            <p>
+              myFriends. <span class="code-btn">join()</span> =>
+              Ahmed,Sayed,Ali,Osama,Gamal,Ameer
+            </p>
+          </div>
         </section>
       </div>
+      <!-- container -->
     </article>
     <!-- ======== elzero 2022 ends ======== -->
 

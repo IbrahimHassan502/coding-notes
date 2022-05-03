@@ -1,22 +1,19 @@
-let holidays = 0;
-let money = 0;
+let zero = 0;
 
-switch (holidays) {
-  case 0:
-    money = 5000;
-    break;
-  case 1:
-  case 2:
-    money = 3000;
-    break;
-  case 3:
-    money = 2000;
-    break;
-  case 4:
-    money = 1000;
-    break;
-  case 5:
-    money = 0;
-    break;
+let counter = 3;
+
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+// Write Code Here
+for (let i = 0; i < 2; i++) {
+  my.pop();
 }
-console.log(`My Money is ${money}`);
+console.log(my.reverse()); // ["Osama", "Elham", "Mazero", "Ahmed"];
+
+console.log(my.slice(++zero, counter)); // ["Elham", "Mazero"]
+
+console.log(
+  `${my[zero].slice(--zero, --counter)}${my[counter].slice(counter)}`
+); // "Elzero"
+console.log(`${my[counter++][++counter]}${my[--counter]}`); // "rO"
+console.log(zero, counter);
