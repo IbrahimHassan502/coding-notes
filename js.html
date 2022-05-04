@@ -716,6 +716,132 @@
     </article>
     <!-- ======== async VS defer ends ======== -->
 
+    <!-- ======== .addEventListener VS .onEvent starts ======== -->
+    <section>
+      <div class="container grid">
+        <h3>.addEventListener</h3>
+        <h3>.onEvent (i.e onClick)</h3>
+        <div class="box">
+          addEventListener can add multiple events to a particular element.
+        </div>
+        <div class="box">
+          onclick can add only a single event to an element. It is basically a
+          property, so gets overwritten.
+        </div>
+        <div class="box">
+          addEventListener can take a third argument that can control the
+          <a href="#event-propgation">event propagation</a>.
+        </div>
+        <div class="box">
+          Event propagation cannot be controlled by onclick.
+        </div>
+        <div class="box">
+          addEventListener can only be added within &lt;script&gt; elements or
+          in external JavaScript file.
+        </div>
+        <div class="box">onclick can be added as an HTML attribute also.</div>
+        <div class="box">
+          addEventListener does not work in older versions of Internet explorer,
+          which uses attachEvent instead.
+        </div>
+        <div class="box">onclick works in all browsers.</div>
+      </div>
+    </section>
+    <!-- ======== .addEventListener VS .onEvent ends ======== -->
+    ends
+    <!-- ======== event propagation starts ======== -->
+    <section id="event-propgation">
+      <div class="container">
+        <h2 class="main-heading">event propagatoin</h2>
+        <div>
+          <div class="img-container">
+            <img src="images/event-propgation1.png" alt="" />
+            <img src="images/event-propgation2.png" alt="" />
+          </div>
+
+          <p>
+            normally when you click in the orange div which has class "three"
+            the console will log
+          </p>
+          <p class="code-btn">
+            three <br />
+            two <br />
+            one
+          </p>
+          <p>that's because event goes through 2 phases</p>
+          <h3>capturing</h3>
+          <p>
+            in which the event is detecting the element you clicked on so in
+            this case it caputres
+            <span class="code-btn">&lt;html&gt;</span> then
+            <span class="code-btn">&lt;body&gt;</span> then
+            <span class="code-btn">&lt;div class="one"&gt;</span> then
+            <span class="code-btn">&lt;div class="two"&gt;</span> then
+            <span class="code-btn">&lt;div class="three"&gt;</span>
+          </p>
+          <p>
+            now your element is detected then the event goes through the second
+            phase
+          </p>
+          <h3>bubbling</h3>
+          <p>
+            in this phase the event (which in this is case is "click") is fired
+            from the clicked element up meaning it fires on div "three" then on
+            div "two" then on div "three" since you "technically" clicked on
+            them since your element is a child in them.
+          </p>
+          <p>
+            also the event is fired on body, html, document but in this example
+            we didn't set up a handler for their click but you get the idea
+          </p>
+        </div>
+        <div>
+          this is the normal behaviour of events in javascript but you can
+          control it by either
+          <ul>
+            <li>reverse the behaviour</li>
+            <li>stop propgation at all</li>
+          </ul>
+        </div>
+        <div>
+          <h3>reverse bubbling and turning it into captureing</h3>
+          <p>
+            simply the syntax of
+            <span class="code-btn">.addEventListner()</span> method is
+          </p>
+          <p class="code-btn">
+            element.addEventListener(event, listener, useCapture);
+          </p>
+          <p>
+            and normally capture is set to be false
+            <span class="code-btn">
+              element.addEventListener(event, listener,
+              <span class="bg-second-color">{capture: false}</span> );
+            </span>
+          </p>
+          <p>
+            so if you set <span class="code-btn">capture: true</span> the
+            console log will be
+          </p>
+          <p>
+            one <br />
+            two <br />
+            three
+          </p>
+          <p>meaning the event is fired while captureing</p>
+          <h3>stop propagation</h3>
+          <p>
+            to stop propgation <span class="code-btn">e.stopPropgation()</span>
+          </p>
+          <p class="bg-second-color">
+            in this case if capture is false console will log "three" and if
+            capture is true console will log "one"
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ======== event propagation ends ======== -->
+
     <!-- ======== elzero 2022 starts ======== -->
     <article class="elzero">
       <div class="container">
@@ -1238,22 +1364,6 @@
         </section>
 
         <section>
-          <h3>label in foor loops</h3>
-          <p>
-            if you have a loop nested in a main loop and you want to break the
-            main loop based on a condition in the nested loop ... if you put
-            just <span class="code-btn">break;</span> in the nested loop it will
-            just break the nested loop here comes the use of labels
-          </p>
-          <img src="images/for-label.png" alt="" />
-          <p>
-            so in the first assumption that you just write
-            <span class="code-btn">break;</span> it will be excatly like
-            <span class="code-btn">break nestedLoop;</span>
-          </p>
-        </section>
-
-        <section>
           <h3>39- Array big introduction</h3>
           <p>to check if the varibale is array or not</p>
           <p>
@@ -1478,6 +1588,104 @@
               Ahmed,Sayed,Ali,Osama,Gamal,Ameer
             </p>
           </div>
+        </section>
+
+        <section>
+          <h3>47- Loop-For And Concept Of Loop</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>48- Looping On Sequences</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>50- Nested Loops And Trainings</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>break; & continue;</h3>
+          <div>
+            <h3>1- break;</h3>
+            <p>used to break the loop at certain condition</p>
+            <p class="bg-second-color">
+              <b>note:</b> any code after the
+              <span class="code-btn">break;</span> statement or even after the
+              if(){} block that containes break statement will not be excuted
+            </p>
+            <p class="code-btn">
+              for(let i =0; ilt;5; i++) { <br />
+              console.log(i); <br />
+              if (i === 2) { break; }
+              <br />
+              }
+            </p>
+            <p>
+              this will print 0,1,2 and then break since the console.log(i) is
+              before the breaking.
+            </p>
+            <p>
+              if you place the console.log statment after the if block 2 won't
+              be printed
+            </p>
+          </div>
+          <div>
+            <h3>2- continue;</h3>
+            <p>used to skip an itiration</p>
+            <p class="code-btn">
+              for(let i =0; ilt;5; i++) { <br />
+              if (i === 2) { continue; }
+              <br />
+              console.log(i);
+              <br />
+              }
+            </p>
+            <p class="bg-second-color">
+              notice that console.log(i) is placed after if(){} block to be
+              skipped if the condition is true otherwise
+              <span class="code-btn">continue;</span> will be useless as if
+              console.log() is before the ifif(){} block (i) will be printed
+              then <span class="code-btn">continue;</span> will skip the reset
+              of the code which is nothing
+            </p>
+          </div>
+          <div>
+            <h3>for loop label</h3>
+            <p>
+              if you have a loop nested in a main loop and you want to break the
+              main loop based on a condition in the nested loop ... if you put
+              just <span class="code-btn">break;</span> in the nested loop it
+              will just break the nested loop here comes the use of labels
+            </p>
+            <img src="images/for-label.png" alt="" />
+            <p>
+              so in the first assumption that you just write
+              <span class="code-btn">break;</span> it will be excatly like
+              <span class="code-btn">break nestedLoop;</span>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>52- Loop-For Advanced Example</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>53- practice-Add Products To Page</h3>
+          no notes needed, good lesson though
+        </section>
+
+        <section>
+          <h3>54- Loop-While</h3>
+          <img src="images/while-loop-syntax.png" alt="" />
+        </section>
+
+        <section>
+          <h3>55- Loop-Do While</h3>
+          <img src="images/do-while-loop-syntax.png" alt="" />
         </section>
       </div>
       <!-- container -->

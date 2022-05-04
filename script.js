@@ -15,5 +15,7 @@ console.log(my.slice(++zero, counter)); // ["Elham", "Mazero"]
 console.log(
   `${my[zero].slice(--zero, --counter)}${my[counter].slice(counter)}`
 ); // "Elzero"
-console.log(`${my[counter++][++counter]}${my[--counter]}`); // "rO"
+console.log(
+  `${my[counter++][++counter]}${my[++zero + true][++counter].toUpperCase()}`
+); // "rO"
 console.log(zero, counter);
