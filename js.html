@@ -842,6 +842,108 @@
     </section>
     <!-- ======== event propagation ends ======== -->
 
+    <!-- ======== extract true or false from truthy and falsy values starts ======== -->
+    <section>
+      <div class="container">
+        <h3>extract true or false from truthy and falsy</h3>
+        <ul>
+          <li>double not operators (!!)</li>
+          <li>boolean constructor</li>
+        </ul>
+        <h3>double not operators (!!)</h3>
+        <p>
+          normal behaviour of the not operator (!) that it returns the oposite
+          of the value
+        </p>
+        <img src="images/not-operator.png" alt="" />
+        <p>
+          so it's possible to ues double not operators to return the right value
+        </p>
+        <img src="images/double-not-operators.png" alt="" />
+        <h3>boolean constructor</h3>
+        <p>
+          normally The Boolean() constructor is used to create Boolean objects.
+        </p>
+        <img src="images/boolean-constructor.png" alt="" />
+        <p>
+          but in our case to extract the boolean value of another value we use
+          the follwing syntax
+        </p>
+        <p>console.log( <span class="code-btn">Boolean(our value)</span> )</p>
+      </div>
+    </section>
+    <!-- ======== extract true or false from truthy and falsy values ends ======== -->
+
+    <!-- ======== logical or (||) & logical and (&&) starts ======== -->
+    <section>
+      <div class="container">
+        <h3>logical or (||) & logical and (&&) & short circuting</h3>
+        <div>
+          <h3>logical or (||)</h3>
+          <p>
+            the behaviour of logical or that it evaluates whatever is on the
+            left hand side. If it is true the operator returns it or it's value
+            if it is false
+            <span class="second-color">
+              it returns whatever on the right hand side without evaluation
+            </span>
+          </p>
+          <p>
+            console.log( a>0 <span class="code-btn">||</span> b>0) => the right
+            hand side evaluates to true so it returns true
+          </p>
+          <p>'cat' || 'dog' => cat is a truthy value so it returns cat</p>
+          <p>
+            '' || 'something' => '' is a falsey value so it returns 'something'
+          </p>
+          <p>
+            false || '' => false is an explicit false value so it returns ''
+          </p>
+          <p class="bg-second-color">
+            notice that in the last two examples when the ('') are on the left
+            hand side the are evaluated to false but when they're on the right
+            hand side they are returned without any evaluation
+          </p>
+          <img src="images/logical-or1.png" alt="" />
+          <img src="images/logical-or2.png" alt="" />
+        </div>
+        <div>
+          <h3>logical and (&&)</h3>
+          <p>
+            the operator returns the value of the first falsy operand
+            encountered when evaluating from left to right, or the value of the
+            last operand if they are all truthy.
+          </p>
+          <p>
+            if the result of one conversion is found to be false, the AND
+            operator stops and returns the original value of that falsy operand;
+            <span class="second-color">
+              it does not evaluate any of the remaining operands.
+            </span>
+          </p>
+          <img src="images/logical-and.png" alt="" />
+        </div>
+        <div>
+          <h3>short ciruting with (||) and (&&)</h3>
+          <p>
+            The AND operator has a higher precedence (priority) than the OR
+            operator, meaning the && operator is executed before the || operator
+          </p>
+          <img src="images/logical-or-and-priority.png" alt="" />
+        </div>
+        <p class="bg-second-color">
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR"
+          >
+            MDN
+          </a>
+          wrote about converting between logcial or and logical and but I didn't
+          put it in here in order not to make this too long
+        </p>
+      </div>
+    </section>
+    <!-- ======== logical or (||) & logical and (&&) ends ======== -->
+
     <!-- ======== elzero 2022 starts ======== -->
     <article class="elzero">
       <div class="container">
@@ -1686,6 +1788,92 @@
         <section>
           <h3>55- Loop-Do While</h3>
           <img src="images/do-while-loop-syntax.png" alt="" />
+        </section>
+
+        <section>
+          <h3>56- Loop-challenge</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>57- Function Intro And Basic Usage</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>58- Function Advanced Examples</h3>
+          no notes needed
+        </section>
+        <section>
+          <h3>59- Function Return And Use Cases</h3>
+          <ul>
+            <li>
+              any code after the
+              <span class="code-btn">return ...;</span> statement won't be
+              excuted
+            </li>
+            <li>
+              you can't but the returned code in another line
+              <p class="code-btn">fucntion sayhi() { return 'hi'; }</p>
+              => undefiend
+              <p>unless you write it like that</p>
+              <p class="code-btn">
+                return ( <br />
+                'hi');
+              </p>
+            </li>
+            <li>
+              you can use the
+              <span class="code-btn">return ...; </span> statement to break a
+              loop in a function
+            </li>
+          </ul>
+          <img src="images/break-loop-with-return.png" alt="" />
+        </section>
+
+        <section>
+          <h3>60 - Function Default Parameters</h3>
+          <p>
+            to assign default value to the functoin parameter simply add equal
+            sign (=) and your defalut value like a normal assignment
+          </p>
+          <p>
+            function sayHell(username,
+            <span class="code-btn">age = "you didn't enter age"</span> ) {
+            console.log(`hello ${username} your age is ${age}`) }
+          </p>
+          <p>
+            in this case if the function is called wihtout the age argument the
+            the message will be =>
+          </p>
+          <p>hello osama (for example) your age is you didn't enter age</p>
+        </section>
+
+        <section>
+          <h3>61- Function Rest Parameters</h3>
+          <p>
+            rest parameter is used when you don't know the numbers of arguments
+            that will be sent to the function
+          </p>
+          <p>rest parameter is simply an array</p>
+          <img src="images/rest-parameter.png" alt="" />
+          <p>you can use rest parameter with normal parameters like</p>
+          <p class="code-btn">function(param1, param2, ...otherpramas) {}</p>
+          <p class="bg-second-color">
+            but you must put the reset parameter as the last one as by logic it
+            takes all the arguments sent to it so any other parameter after it
+            won't take any
+          </p>
+        </section>
+
+        <section>
+          <h3>62- Function Ultimate Practice</h3>
+          no netes neede, good lesson though
+        </section>
+
+        <section>
+          <h3>63- Random Arguments Function Challenge</h3>
+          no netes neede, good lesson though
         </section>
       </div>
       <!-- container -->
