@@ -1,9 +1,27 @@
-function multiply(...nums) {
-  let resault = 1;
-  for (let i = 0; i < nums.length; i++) {
-    resault *= typeof nums[i] === "number" ? parseInt(nums[i]) : 1;
-  }
-  return resault;
-}
+/*
+  Higher Order Functions Challenges
 
-console.log(multiply(100.5, 10, "B"));
+  You Can Use
+  - ,
+  - _
+  - Space
+  - True => 1 => One Time Only In The Code
+
+  You Cannot Use
+  - Numbers
+  - Letters
+
+  - You Must Use [Filter + Map + Reduce + Your Knowledge]
+  - Order Is Not Important
+  - All In One Chain
+
+*/
+let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+let solution = myString
+  .split("")
+  .filter((ele) => isNaN(ele) && ele !== ",")
+  .map((ele) => ele.replace("_", " "))
+  .reduce((acc, curr) => (acc === curr ? curr : acc + curr));
+
+console.log(solution); // Elzero Web School

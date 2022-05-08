@@ -977,6 +977,46 @@
     </section>
     <!-- ======== operators ends ======== -->
 
+    <!-- ======== Curry Functions starts ======== -->
+    <section>
+      <div class="container">
+        <h3>Curry Functions</h3>
+        <p>
+          if you have function that have two level of function nesting in it
+          like this:
+        </p>
+        <img src="images/curry-function1.png" alt="" />
+        <p>
+          now these are three functions each one needs an argument. If you try
+          to pass the arguments like this =>
+          <span class="code-btn">takeNmae('ibrahim', 'mohamed', 'ali')</span>
+          this would be passing three arguments to the first function. (it will
+          take the frist one as firstName and the other two will be ignored)
+        </p>
+        <p>
+          so the right syntax would be like this =>
+          <span class="code-btn">takeName('ibrahim')('mohamed')('ali)</span>
+        </p>
+        <p>
+          now for more advanced quick syntax you can change it into arrow
+          function something like this:
+        </p>
+        <img src="images/curry-function2.png" alt="" />
+        <p>offcourse you can remove the parenthesis</p>
+        <p>
+          you also can use curry functoins on more than one stage like this:
+        </p>
+        <img src="images/curry-function3.png" alt="" />
+        <p>
+          notice if just logged myName without the last argument =>
+          <span class="code-btn">console.log(myName)</span>
+        </p>
+        <img src="images/curry-function4.png" alt="" />
+        <p>so it's like it tells you what's messing</p>
+      </div>
+    </section>
+    <!-- ======== Curry Functions ends ======== -->
+
     <!-- ======== elzero 2022 starts ======== -->
     <article class="elzero">
       <div class="container">
@@ -1901,27 +1941,189 @@
 
         <section>
           <h3>62- Function Ultimate Practice</h3>
-          no netes neede, good lesson though
+          no netes needed, good lesson though
         </section>
 
         <section>
           <h3>63- Random Arguments Function Challenge</h3>
-          no netes neede, good lesson though
+          no netes needed, good lesson though
         </section>
 
         <section>
           <h3>64- Anonymous Function And Practice</h3>
-          no netes neede
+          no netes needed
         </section>
 
         <section>
           <h3>65- Return Nested Function</h3>
-          no netes neede
+          no netes needed
         </section>
 
         <section>
           <h3>66 - Arrow Function Syntax</h3>
-          no netes neede
+          no netes needed
+        </section>
+
+        <section>
+          <h3>67 - Scope-Global And Local</h3>
+          <p>
+            the usual behaviour of function when variables are used is that it
+            looks for the varibles inside out
+          </p>
+          <p>
+            meaning that it starts in the function scoop if it finds the
+            variable it uses their value inside the function (
+            <span class="code-btn">
+              even if they have different values outside the function
+            </span>
+            ). if it doesn't find them it goes to the outer scope, if it doesn'
+            find them it goes to the outer scope if there is and so on
+          </p>
+          <img src="images/function-scope.png" alt="" />
+        </section>
+
+        <section>
+          <h3>68- Scope-Block</h3>
+          no netes needed
+        </section>
+
+        <section>
+          <h3>69- Scope-Lexical (Static)</h3>
+          no netes needed
+        </section>
+        <section>
+          <h3>70- Arrow Function Challenge</h3>
+          no netes needed
+        </section>
+        <section>
+          <h3>71- Higher Order Functions-Map</h3>
+          <p>map takes three parameters</p>
+          <ol>
+            <li>the current element parameter (mandatory)</li>
+            <li>the current element index (optional)</li>
+            <li>the array map is performed on (optional)</li>
+          </ol>
+          <img src="images/map-parameters1.png" alt="" />
+          <img src="images/map-parameter2.png" alt="" />
+          <p>
+            number ten as logged in console is "this" but I still don't know
+            what "this" does in this situation
+          </p>
+          <p>
+            as far as I understood. Whatever you as the second argument (after
+            the function) will be the "this" variable
+          </p>
+          <p>if you don't but any thing "this" returns the window object</p>
+        </section>
+        <section>
+          <h3>72- Higher Order Functions - Map Practice</h3>
+          <p>
+            dealing with NaN can be tricky as
+            <span class="code-btn">typeof NaN</span> => 'number'
+          </p>
+          <p><span class="code-btn">NaN === NaN</span> false</p>
+          <p>
+            so in order to check if a given value is not a number NaN use the
+            following syntax
+          </p>
+          <p><span class="code-btn">isNaN(your value)</span></p>
+          <p>also notice</p>
+          <p><span class="code-btn">isNaN('hola')</span> => true</p>
+          <p><span class="code-btn">isNaN(10)</span> => flase</p>
+          <p>make sure you don't get confused</p>
+          <p>
+            also make sure you give
+            <a
+              href="https://www.youtube.com/playlist?list=PLDoPjvoNmBAxCjHi-HIfNoZrMkfbuvVDY"
+            >
+              problem solvging playlist a look
+            </a>
+          </p>
+          <p>no further notes needed to be taken, but good lesson though</p>
+        </section>
+
+        <section>
+          <h3>73- Higher Order Functions-Filter</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>74- Higher Order Functions -Filter Practice</h3>
+          no notes needed
+        </section>
+        <section>
+          <h3>75- Higher Order Functions-Reduce</h3>
+          <p>
+            the job if reducer function is as the name tells it reduces the
+            whole array into one value and this should be when you use it
+          </p>
+          <p>reducer function takes 2 parameters</p>
+          <ol>
+            <li>
+              callback functoin (the actual function that makes the reductoin)
+            </li>
+            <li>initial value</li>
+          </ol>
+          <img src="images/reducer.png" alt="" />
+          <img src="images/reducer-initial-value.png" alt="" />
+          <ul>
+            <li>
+              <p>
+                acc: is a short for accumulator which is the sum variable where
+                you store the value from the previous calculatoin to preform on
+                the new value again and so on
+              </p>
+              <p>
+                accumulator value in the first itiration is the initial value
+                you set. If the initial value is not set (as it's optional) then
+                accumulator's value is the first element in the array
+              </p>
+            </li>
+            <li>
+              <p>
+                current: the element that will be calculated with the
+                accumulator. in this case the next number that will be added
+              </p>
+              <p>
+                current value in the first itiration if the initial value of the
+                accumulator the set is the first element of the array if the
+                initial value is not set then since the accumulator is the first
+                element the current value is the second element
+              </p>
+            </li>
+            <li>
+              <p>
+                index: index of the current element that is to be calculated
+                with the accumulator
+              </p>
+              <p>
+                so in the first itiratoin if the initial value is set index = 0
+                the first index in the array, if the initial value is not set
+                index = 1 the second value of the array
+              </p>
+            </li>
+            <li>arr: is the array being travested through</li>
+          </ul>
+          <p>of course you can name these parameters any name you want</p>
+          <p>index, arr parameters are optional</p>
+        </section>
+
+        <section>
+          <h3>76- Higher Order Functions-Reduce</h3>
+          no notes neede
+        </section>
+
+        <section>
+          <h3>77- Higher Order Functions-ForEach And Practice</h3>
+          <p>
+            forEach doesn't return any thing it just applies the callback
+            function on each element of the array
+          </p>
+          <p>no further notes needed</p>
+        </section>
+
+        <section>
+          <h3>78- Higher Order Functions - Challenge</h3>
         </section>
       </div>
       <!-- container -->

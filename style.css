@@ -177,7 +177,8 @@ article.tbt img {
 .text-bold {
   font-weight: bold;
 }
-ul {
+ul,
+ol {
   list-style-position: inside;
   margin-inline-start: 20px;
 }
