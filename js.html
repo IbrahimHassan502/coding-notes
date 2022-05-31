@@ -1259,11 +1259,12 @@
             </p>
             <p>
               "Elzero Web School"<span class="code-btn">.substring(6, 2);</span>
-              => "Elzero" (it switches the two argument in case the first one is
+              => "zero" (it switches the two argument in case the first one is
               greater than the second one so behind the scenes its (2, 6))
             </p>
             <p>
               "Elzero Web School"<span class="code-btn">.slice(6, 2);</span> =>
+              ''
               <span class="bg-second-color">nothing</span>
             </p>
           </div>
@@ -1291,6 +1292,10 @@
                 >.substring(a.length - 5, a.length - 3);</span
               >
               => "ch"
+            </p>
+            <p class="bg-second-color">
+              (a) here is a varible with the senetence "Elzero Web School"
+              stored in it
             </p>
           </div>
           <div>
@@ -1337,11 +1342,11 @@
           </div>
           <div>
             <p>
-              "Elzero Web School"<span class="code-b">.includes("Web");</span>
+              "Elzero Web School"<span class="code-btn">.includes("Web");</span>
               => true
             </p>
             <p>
-              "Elzero Web School"<span class="code-b"
+              "Elzero Web School"<span class="code-btn"
                 >.includes("Web", 8);</span
               >
               => false (the second argument is starting index and optional)
@@ -1422,7 +1427,7 @@
           <h3>33 - If Conditions</h3>
           <p>
             note that the <span class="code-btn">else if () {}</span> will be
-            excuted <span class="bg-second-color">only</span>if the previous
+            excuted <span class="bg-second-color">only</span> if the previous
             condition is false
           </p>
           <p>
@@ -1454,6 +1459,12 @@
             height="200"
             alt=""
           />
+          <p>
+            to make it easy to remember notice the sequence
+            <span class="code-btn">? senetence :</span> then
+            <span class="code-btn"> ? senetence : </span>
+            you can't end with a senetence after a ?, it should be after a :
+          </p>
           <p>
             revise rest of the lesson
             <a
@@ -1499,7 +1510,7 @@
             </ul>
             <p>
               <span class="second-color">and only</span> if the variable equals
-              to either one of those not any other fasley value
+              to either one of these (not any other fasley value)
             </p>
           </div>
         </section>
@@ -1601,7 +1612,7 @@
         <section>
           <h3>43- Searching Array</h3>
           <p class="code-btn">
-            let myArray = ["Ahmed", "Mohamed", "Osama", "Ahmed"[
+            let myArray = ["Ahmed", "Mohamed", "Osama", "Ahmed"]
           </p>
           <p>to find index of an element in an array</p>
           <p>myArray. <span class="code-btn">indexOf("Ahmed")</span> => 0</p>
@@ -1641,18 +1652,21 @@
             </p>
             <p class="bg-second-color">
               but notice that 20 came after 1000 as the method's mechanism is it
-              starts with the figuers starting with 1 and sorts all of them from
-              the smalles to the largest then goes to all figures starting with
-              2 and does the same and so on
+              starts with the figuers starting with 1 and sorts all numbers
+              starting with 1 from the smalles to the largest then goes to all
+              figures starting with 2 and does the same and so on
             </p>
           </div>
           <div>
             <p>
               to reverse the order of the array
-              <span class="code-btn">whatever the order is</span>
+              <span class="bg-second-color">whatever the order is</span>
             </p>
-            <p>myArray. <span class="code-btn">.reverse</span> =></p>
-            <p>[-20, -10, "10", 20, 100, 1000, "90", "mohamed", "sayed", 10]</p>
+            <p>
+              myArray<span class="code-btn">.reverse()</span> => the result is
+              reverse of the main array that is under heading 44- sorting array
+            </p>
+            <p>[-10, -20, "10", 20, 100, 1000, "90", "mohamed", "sayed", 10]</p>
           </div>
           <p class="bg-second-color">
             <b>Note:</b> both previous methods do <b>permenant</b> chnage to the
@@ -1726,11 +1740,11 @@
             </p>
             <p>["Ahmed", "Sayed", "Osama", "Gamal", "Ameer"]</p>
             <p class="bg-second-color">
-              just removed element without adding any
+              just removed element ("Ali") without adding any
             </p>
             <p class="bg-second-color">
               <b>Note: </b> removed elements by splice() are returned so you can
-              sotre them in a variable or console them or whatever
+              store them in a variable or console them or whatever
             </p>
             <p class="bg-second-color">
               <b>Note: </b> splice makes a <b>permenant</b> change on the array
@@ -1784,14 +1798,14 @@
           <h3>break; & continue;</h3>
           <div>
             <h3>1- break;</h3>
-            <p>used to break the loop at certain condition</p>
+            <p>is used to break the loop at certain condition</p>
             <p class="bg-second-color">
               <b>note:</b> any code after the
               <span class="code-btn">break;</span> statement or even after the
               if(){} block that containes break statement will not be excuted
             </p>
             <p class="code-btn">
-              for(let i =0; ilt;5; i++) { <br />
+              for(let i =0; i&lt;5; i++) { <br />
               console.log(i); <br />
               if (i === 2) { break; }
               <br />
@@ -1808,9 +1822,9 @@
           </div>
           <div>
             <h3>2- continue;</h3>
-            <p>used to skip an itiration</p>
+            <p>is used to skip an itiration</p>
             <p class="code-btn">
-              for(let i =0; ilt;5; i++) { <br />
+              for(let i =0; i&lt;5; i++) { <br />
               if (i === 2) { continue; }
               <br />
               console.log(i);
@@ -1821,9 +1835,9 @@
               notice that console.log(i) is placed after if(){} block to be
               skipped if the condition is true otherwise
               <span class="code-btn">continue;</span> will be useless as if
-              console.log() is before the ifif(){} block (i) will be printed
+              console.log() is before the if(){} block as (i) will be printed
               then <span class="code-btn">continue;</span> will skip the reset
-              of the code which is nothing
+              of the code which is nothing (in this case)
             </p>
           </div>
           <div>
@@ -1856,11 +1870,26 @@
         <section>
           <h3>54- Loop-While</h3>
           <img src="images/while-loop-syntax.png" alt="" />
+          <p class="bg-second-color">
+            careful not to type the increment statement (index+=1) or what ever
+            the statement is; as it will cause an infinite loop to occure
+          </p>
         </section>
 
         <section>
           <h3>55- Loop-Do While</h3>
           <img src="images/do-while-loop-syntax.png" alt="" />
+          <div>
+            <h3>while VS do-while</h3>
+            <p>
+              in the do while case the code will be excuted once if the
+              condition between the while parenthesis is false.
+            </p>
+            <p>
+              whereas in the while case the code will never be excuted if the
+              condition is false
+            </p>
+          </div>
         </section>
 
         <section>
@@ -1887,8 +1916,18 @@
             </li>
             <li>
               you can't but the returned code in another line
-              <p class="code-btn">fucntion sayhi() { return 'hi'; }</p>
+              <p class="code-btn">
+                fucntion sayhi() { return <br />
+                'hi'; }
+              </p>
               => undefiend
+              <p>
+                and you will notice the editor will make it like this
+                <span class="code-btn">
+                  {return; <br />
+                  hi;}
+                </span>
+              </p>
               <p>unless you write it like that</p>
               <p class="code-btn">
                 return ( <br />
@@ -1902,6 +1941,12 @@
             </li>
           </ul>
           <img src="images/break-loop-with-return.png" alt="" />
+          <img src="images/return-interrupting.png" alt="" />
+          <p>
+            notice that the 'interrupting' sentence is not printed in the
+            console as we didn't call the fucntion in a console and thus it's
+            return is not printed
+          </p>
         </section>
 
         <section>
@@ -1911,7 +1956,7 @@
             sign (=) and your defalut value like a normal assignment
           </p>
           <p>
-            function sayHell(username,
+            function sayHello(username,
             <span class="code-btn">age = "you didn't enter age"</span> ) {
             console.log(`hello ${username} your age is ${age}`) }
           </p>
@@ -1941,27 +1986,27 @@
 
         <section>
           <h3>62- Function Ultimate Practice</h3>
-          no netes needed, good lesson though
+          no notes needed, good lesson though
         </section>
 
         <section>
           <h3>63- Random Arguments Function Challenge</h3>
-          no netes needed, good lesson though
+          no notes needed, good lesson though
         </section>
 
         <section>
           <h3>64- Anonymous Function And Practice</h3>
-          no netes needed
+          no notes needed
         </section>
 
         <section>
           <h3>65- Return Nested Function</h3>
-          no netes needed
+          no notes needed
         </section>
 
         <section>
           <h3>66 - Arrow Function Syntax</h3>
-          no netes needed
+          no notes needed
         </section>
 
         <section>
@@ -1971,29 +2016,30 @@
             looks for the varibles inside out
           </p>
           <p>
-            meaning that it starts in the function scoop if it finds the
-            variable it uses their value inside the function (
+            meaning that it starts looking in the function scoop if it finds the
+            variables it uses their value inside the function (
             <span class="code-btn">
               even if they have different values outside the function
             </span>
-            ). if it doesn't find them it goes to the outer scope, if it doesn'
-            find them it goes to the outer scope if there is and so on
+            ). if it doesn't find them it goes to the outer scope, if it doesn't
+            find them in that scope, then it goes to the outer scope if there is
+            and so on
           </p>
           <img src="images/function-scope.png" alt="" />
         </section>
 
         <section>
           <h3>68- Scope-Block</h3>
-          no netes needed
+          no notes needed
         </section>
 
         <section>
           <h3>69- Scope-Lexical (Static)</h3>
-          no netes needed
+          no notes needed
         </section>
         <section>
           <h3>70- Arrow Function Challenge</h3>
-          no netes needed
+          no notes needed
         </section>
         <section>
           <h3>71- Higher Order Functions-Map</h3>
@@ -2010,8 +2056,8 @@
             what "this" does in this situation
           </p>
           <p>
-            as far as I understood. Whatever you as the second argument (after
-            the function) will be the "this" variable
+            as far as I understood. Whatever you type as the second argument
+            (after the function) will be assigned to the "this" variable
           </p>
           <p>if you don't but any thing "this" returns the window object</p>
         </section>
@@ -2065,13 +2111,14 @@
             <li>initial value</li>
           </ol>
           <img src="images/reducer.png" alt="" />
-          <img src="images/reducer-initial-value.png" alt="" />
+          <img src="images/reducer-initial-value2.png" alt="" />
           <ul>
             <li>
               <p>
                 acc: is a short for accumulator which is the sum variable where
                 you store the value from the previous calculatoin to preform on
-                the new value again and so on
+                the new value again and so on (offcourse you can call it
+                whatever you want)
               </p>
               <p>
                 accumulator value in the first itiration is the initial value
