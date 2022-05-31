@@ -1,27 +1,13 @@
-/*
-  Higher Order Functions Challenges
+let nums = [10, 20, 15, 30];
 
-  You Can Use
-  - ,
-  - _
-  - Space
-  - True => 1 => One Time Only In The Code
+let add = nums.reduce(function (acc, current, index, arr) {
+  console.log(`Acc => ${acc}`);
+  console.log(`Current Element => ${current}`);
+  console.log(`Current Element Index => ${index}`);
+  console.log(`Array => ${arr}`);
+  console.log(acc + current);
+  console.log(`#############`);
+  return acc + current;
+}, 5);
 
-  You Cannot Use
-  - Numbers
-  - Letters
-
-  - You Must Use [Filter + Map + Reduce + Your Knowledge]
-  - Order Is Not Important
-  - All In One Chain
-
-*/
-let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
-
-let solution = myString
-  .split("")
-  .filter((ele) => isNaN(ele) && ele !== ",")
-  .map((ele) => ele.replace("_", " "))
-  .reduce((acc, curr) => (acc === curr ? curr : acc + curr));
-
-console.log(solution); // Elzero Web School
+console.log(add);
