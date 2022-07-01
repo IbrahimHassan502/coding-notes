@@ -146,7 +146,7 @@
             <ol>
               <li>
                 <span class="code-btn">new Date(2021, 1, 25)</span>: here the
-                month is februry (number 2 not 1) as in this case month numbers
+                month is februry (number 1 not 2) as in this case month numbers
                 start from 0 to 11.
                 <div class="bg-second-color">
                   <p>
@@ -1049,7 +1049,7 @@
           <p>
             as the mechansim of parseInt is it
             <span class="second-color">keeps</span> returning numbers found in
-            the string untill countring string that is not a number so it
+            the string untill it encounteres string that is not a number so it
             ignores all characters after that
           </p>
           <p>
@@ -1283,7 +1283,7 @@
             </p>
             <p>
               "Elzero Web School"<span class="code-bt">.slice(-10, 9);</span>
-              => "W"
+              => "We"
             </p>
           </div>
           <div>
@@ -1380,10 +1380,9 @@
               => true
             </p>
             <p>
-              "Elzero Web School"<span class="code-btn"
-                >.endsWith("o", 6);</span
-              >
-              => true (the second argument is a length not an index)
+              "Elzero Web School"
+              <span class="code-btn"> .endsWith("o", 6);</span>
+              => true (the second argument is index not a length)
             </p>
           </div>
         </section>
@@ -1463,7 +1462,7 @@
             to make it easy to remember notice the sequence
             <span class="code-btn">? senetence :</span> then
             <span class="code-btn"> ? senetence : </span>
-            you can't end with a senetence after a ?, it should be after a :
+            you can't end with a senetence after a (?), it should be after a (:)
           </p>
           <p>
             revise rest of the lesson
@@ -1652,9 +1651,9 @@
             </p>
             <p class="bg-second-color">
               but notice that 20 came after 1000 as the method's mechanism is it
-              starts with the figuers starting with 1 and sorts all numbers
+              starts with the numbers starting with 1 and sorts all numbers
               starting with 1 from the smalles to the largest then goes to all
-              figures starting with 2 and does the same and so on
+              numbers starting with 2 and does the same and so on...
             </p>
           </div>
           <div>
@@ -1664,12 +1663,13 @@
             </p>
             <p>
               myArray<span class="code-btn">.reverse()</span> => the result is
-              reverse of the main array that is under heading 44- sorting array
+              reverse of the main array that is under (heading 44- sorting
+              array)
             </p>
             <p>[-10, -20, "10", 20, 100, 1000, "90", "mohamed", "sayed", 10]</p>
           </div>
           <p class="bg-second-color">
-            <b>Note:</b> both previous methods do <b>permenant</b> chnage to the
+            <b>Note:</b> both previous methods do <b>permenant</b> change to the
             array
           </p>
         </section>
@@ -1685,7 +1685,7 @@
               myFriends.
               <span class="code-btn">
                 slice( <b> starting index </b>,
-                <b> ending index <i>*not included*</i> </b>)
+                <b> ending index <i>*not included in the slice*</i> </b>)
               </span>
             </p>
             <p>
@@ -1761,7 +1761,8 @@
             </p>
             <p class="code-btn">
               let allFriends = myFriends.<b>
-                concat(myNewFriends, schoolFriends, "Gameel", [1, 2])
+                concat(myNewFriends, schoolFriends, "Gameel", ['hossam',
+                'nabil'])
               </b>
             </p>
           </div>
@@ -1835,9 +1836,9 @@
               notice that console.log(i) is placed after if(){} block to be
               skipped if the condition is true otherwise
               <span class="code-btn">continue;</span> will be useless as if
-              console.log() is before the if(){} block as (i) will be printed
-              then <span class="code-btn">continue;</span> will skip the reset
-              of the code which is nothing (in this case)
+              console.log() is before the if(){} block, (i) will be printed then
+              <span class="code-btn">continue;</span> will skip the reset of the
+              code which is nothing (in this case)
             </p>
           </div>
           <div>
@@ -1849,6 +1850,7 @@
               will just break the nested loop here comes the use of labels
             </p>
             <img src="images/for-label.png" alt="" />
+            <img src="images/nested-loop-output.png" alt="" />
             <p>
               so in the first assumption that you just write
               <span class="code-btn">break;</span> it will be excatly like
@@ -1871,7 +1873,7 @@
           <h3>54- Loop-While</h3>
           <img src="images/while-loop-syntax.png" alt="" />
           <p class="bg-second-color">
-            careful not to type the increment statement (index+=1) or what ever
+            careful not to type the increment statement (index+=1) or whatever
             the statement is; as it will cause an infinite loop to occure
           </p>
         </section>
@@ -2082,8 +2084,9 @@
             <a
               href="https://www.youtube.com/playlist?list=PLDoPjvoNmBAxCjHi-HIfNoZrMkfbuvVDY"
             >
-              problem solvging playlist a look
+              problem solvging playlist
             </a>
+            a look
           </p>
           <p>no further notes needed to be taken, but good lesson though</p>
         </section>
@@ -2132,9 +2135,9 @@
                 accumulator. in this case the next number that will be added
               </p>
               <p>
-                current value in the first itiration if the initial value of the
-                accumulator the set is the first element of the array if the
-                initial value is not set then since the accumulator is the first
+                current value in the first itiration is the first element of the
+                array if the initial value of the accumulator is set. If the
+                initial value is not set then since the accumulator will be the first
                 element the current value is the second element
               </p>
             </li>

@@ -92,6 +92,7 @@ b {
   font-weight: bold;
   /* font-size: 1.7rem; */
   text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 .container {
   overflow: hidden;

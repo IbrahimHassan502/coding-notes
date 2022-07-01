@@ -1,13 +1,13 @@
-let nums = [10, 20, 15, 30];
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
 
-let add = nums.reduce(function (acc, current, index, arr) {
-  console.log(`Acc => ${acc}`);
-  console.log(`Current Element => ${current}`);
-  console.log(`Current Element Index => ${index}`);
-  console.log(`Array => ${arr}`);
-  console.log(acc + current);
-  console.log(`#############`);
-  return acc + current;
-}, 5);
+let colors = ["Red", "Green", "Black"];
 
-console.log(add);
+mainLoop: for (let i = 0; i < products.length; i++) {
+  console.log(products[i]);
+  nestedLoop: for (let j = 0; j < colors.length; j++) {
+    console.log(`- ${colors[j]}`);
+    if (colors[j] === "Green") {
+      break mainLoop;
+    }
+  }
+}
