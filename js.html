@@ -32,7 +32,7 @@
     <article class="js-notes">
       <div class="container">
         <h2 class="main-heading">JS notes <time datetime="2021">2021</time></h2>
-        <ul>
+        <ul class="big-items">
           <li>
             <span class="second-color">DOM</span> and all of its objects like
             window are not in the core JS just like console they are
@@ -66,7 +66,15 @@
             <span class="code-btn">array.pop();</span> returns the removed
             element from the array.
           </li>
-
+          <li>
+            <span class="code-btn">array[-1]</span> doesn't return the last
+            element in the array
+            <p>
+              in order to get the last element you either use
+              <span class="code-btn">array[array.length-1]</span>
+            </p>
+            <p>or just use <span class="code-btn">array.at(-1)</span></p>
+          </li>
           <li>
             <span class="code-btn">.getElementsByClassName();</span> and
             <span class="code-btn">.getElementsByByTagName();</span>
@@ -748,7 +756,7 @@
       </div>
     </section>
     <!-- ======== .addEventListener VS .onEvent ends ======== -->
-    ends
+
     <!-- ======== event propagation starts ======== -->
     <section id="event-propgation">
       <div class="container">
@@ -1016,6 +1024,98 @@
       </div>
     </section>
     <!-- ======== Curry Functions ends ======== -->
+
+    <!-- ======== strict mode starts ======== -->
+    <section>
+      <h3>strict mode</h3>
+      <div>
+        <h4>invoking strict mode</h4>
+        <ul>
+          <li>
+            either invoke it to a whole script by typing
+            <span class="code-btn">"use strict";</span>
+            before any other statement in the code
+          </li>
+          <li>
+            or invoke it to a piece of code like
+            <span class="second-color">
+              (eval code, Function code, event handler attributes, strings
+              passed to setTimeout())
+            </span>
+            by typing
+            <span class="code-btn">"use strict";</span>
+            in the function's body before any other statements.
+            <img src="images/function-use-strict.png" alt="" />
+          </li>
+          <li>
+            and according to
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
+            >
+              MDN
+            </a>
+            <p class="bg-second-color">
+              <q>
+                The entire contents of JavaScript <b>modules</b> are
+                automatically in strict mode, with no statement needed to
+                initiate it.
+              </q>
+            </p>
+          </li>
+          <li>
+            also according to
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
+            >
+              MDN
+            </a>
+            <p class="bg-second-color">
+              <q>
+                All parts of ECMAScript <b>classes</b> are strict mode code,
+                including both class declarations and class expressions —
+                and so also including all parts of class bodies.
+              </q>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>benefits of strict mode</h4>
+        <ul class="big-items">
+          <li>
+            <h5>Converting mistakes into errors</h5>
+            <p>
+              First, strict mode makes it impossible to accidentally create
+              global variables. In normal JavaScript mistyping a variable in
+              an assignment creates a new property on the global object
+              (adding the mistyped variable as a property to the window
+              object) and continues to "work" (although future failure is
+              possible: likely, in modern JavaScript). Assignments, which
+              would accidentally create global variables, instead throw an
+              error in strict mode:
+              <img src="images/use-strict-mistyped-variable.png" alt="" />
+            </p>
+            <p>
+              Second, strict mode makes assignments which would otherwise
+              silently fail to throw an exception.
+            </p>
+            <p>
+              silent fail assignments:
+              <ul>
+                <li>
+                  assignment to a non-writable global or property. like assigning to
+                  <span class="code-btn">NaN</span>
+                </li>
+                <li>assignment to a getter-only property</li>
+                <li>assignment to a new property on a non-extensible object</li>
+              </ul>
+              <img src="images/use-strict-silent-errors.png" alt="">
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- ======== strict mode ends ======== -->
 
     <!-- ======== elzero 2022 starts ======== -->
     <article class="elzero">
@@ -1554,6 +1654,16 @@
           <p>
             console.log(<span class="code-btn">Array.isArray(myArray)</span>)
           </p>
+          <p>
+            <b class="second-color">note:</b> that
+            <span class="code-btn">array[-1]</span> doesn't return the last
+            element in the array
+          </p>
+          <p>
+            in order to get the last element you either use
+            <span class="code-btn">array[array.length-1]</span>
+          </p>
+          <p>or just use <span class="code-btn">array.at(-1)</span></p>
         </section>
 
         <section>
@@ -2137,8 +2247,8 @@
               <p>
                 current value in the first itiration is the first element of the
                 array if the initial value of the accumulator is set. If the
-                initial value is not set then since the accumulator will be the first
-                element the current value is the second element
+                initial value is not set then since the accumulator will be the
+                first element the current value is the second element
               </p>
             </li>
             <li>
@@ -2174,6 +2284,132 @@
 
         <section>
           <h3>78- Higher Order Functions - Challenge</h3>
+        </section>
+
+        <section>
+          <h3>79 - Object - Introduction</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>80 - Dot Notation vs Bracket Notation</h3>
+          <img src="images/dot-notaition-vs-bracket-notation.png" alt="" />
+          <div>
+            <p>
+              the property "the country" is between qoutatoins because it's
+              <span class="second-color">non-valid identifier</span> as it
+              contains space (other characters that make the identifier not
+              vaild the hyphen (-) and starting with numbers ("1st country") and
+              so on)
+            </p>
+            <p>
+              bracket notaion
+              <span class="second-color">accepts non-vaild</span>
+              identifier while dot notaion doesn't
+            </p>
+            <p><span class="code-btn">user["the country"]</span> => egypt</p>
+            <p><span class="code-btn">user."the country"</span> => error</p>
+          </div>
+
+          <div>
+            <p>
+              bracket notaion accepts varibales with the same name of an
+              existing property, while dot notaion doesn't
+            </p>
+            <p><span class="code-btn">user[dynamicProp]</span> => egypt</p>
+            <p><span class="code-btn">user.dynamicProp</span> => error</p>
+          </div>
+          <p class="bg-second-color">
+            bracket notation also accpets normal properties
+          </p>
+          <p><span class="code-btn">user["name"]</span> => osama</p>
+          <p class="bg-second-color">
+            note the property is between quotes otherwise it will tell you it is
+            not defined variable
+          </p>
+        </section>
+
+        <section>
+          <h3>81 - Nested Object And Advanced Trainings</h3>
+          <img src="images/object-method.png" alt="" />
+          <p>
+            notice when we wanted to access a property of the object we accessed
+            it like usual
+          </p>
+          <p>
+            if the code was like
+            <span class="code-btn">available === true</span>
+            the code will tell you it's an un-defined variable as it thinks it's
+            a global-scope variable
+          </p>
+        </section>
+
+        <section>
+          <h3>82 - Create Object With New Keyword</h3>
+          <div>
+            <p>to add property or a method to an object</p>
+            <img src="images/object-add-prop-method.png" alt="" />
+            <p>also this way is used to update an existing property</p>
+            <img src="images/object-update-prop.png" alt="" />
+          </div>
+          <div>
+            <p>
+              you can declare an object using the
+              <span class="second-color">new</span> Keyword
+            </p>
+            <p>
+              let myObj =
+              <span class="code-btn">new Object()</span>
+            </p>
+            <p>
+              and you can declare it with initial properties like the normal
+              case
+            </p>
+            <p>
+              let myObj =
+              <span class="code-btn">
+                new Object({ age: 20, county: "egypt", })
+              </span>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>83 - This Keyword</h3>
+          <p>
+            this is a reserved keyword and it refers to different things
+            depending on the context
+          </p>
+          <p>
+            in case of functions the general role is "this" refers to the owner
+            of the function
+          </p>
+          <p>so if you write just</p>
+          <p>
+            <span class="code-btn">function() {return this;}</span>
+          </p>
+          <p>it will return the <span class="code-btn">window</span>object</p>
+          <p>but if you write the code below</p>
+          <p>
+            <span class="code-btn">
+              document.getElementById("cl").onclick = function () {
+              console.log(this); };
+            </span>
+          </p>
+          <p>it will return the clicked button</p>
+          <p>also if you write the code below</p>
+          <img src="images/this-with-object.png" alt="" />
+          <p>
+            this will return the object which is the owner of the function
+            "this" is written in
+          </p>
+          <p class="bg-second-color">
+            note that "this" changes in <b>strict mode</b>
+          </p>
+        </section>
+
+        <section>
+          <h3></h3>
         </section>
       </div>
       <!-- container -->

@@ -1,13 +1,6 @@
-let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+"use strict";
+let matchHouses = (houseNum) => (houseNum > 0 ? houseNum * 6 - --houseNum : 0);
 
-let colors = ["Red", "Green", "Black"];
-
-mainLoop: for (let i = 0; i < products.length; i++) {
-  console.log(products[i]);
-  nestedLoop: for (let j = 0; j < colors.length; j++) {
-    console.log(`- ${colors[j]}`);
-    if (colors[j] === "Green") {
-      break mainLoop;
-    }
-  }
-}
+console.log(matchHouses(0));
+console.log(matchHouses(4));
+console.log(matchHouses(87));

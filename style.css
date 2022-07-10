@@ -59,8 +59,8 @@ p {
 li {
   margin-bottom: 15px;
 }
-li.big-item,
-.big-items > li {
+li.big-item:not(:last-of-type),
+.big-items > li:not(:last-of-type) {
   margin-bottom: 35px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--second-color, #ffe699);
@@ -182,7 +182,7 @@ article.tbt img {
 ul,
 ol {
   list-style-position: inside;
-  margin-inline-start: 20px;
+  padding-inline: 25px;
 }
 header {
   transition: 0.3s;
@@ -219,4 +219,10 @@ a {
   margin: 5px;
   background: var(--main-color, lightblue);
   border-radius: 7px;
+}
+h4 {
+  color: var(--main-color, lightblue);
+}
+h5 {
+  color: var(--second-color, yellow);
 }
