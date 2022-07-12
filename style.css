@@ -213,6 +213,14 @@ article.elzero section div {
   margin-bottom: 60px;
   border-bottom: 1px solid var(--second-color, yellow);
 }
+article.problem-solving section,
+article.problem-solving h3 {
+  display: inline;
+}
+article.problem-solving li::marker {
+  font-size: 30px;
+  color: var(--second-color, yellow);
+}
 a {
   display: inline-block;
   padding: 5px;

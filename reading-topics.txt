@@ -3,6 +3,7 @@
 - object
 - difference between html collection & nodeList
 - difference between innerText & text-content
+- difference between createAttribute() then setAttributeNode & setAttribute
 - clean code
 - css,html,js bes practice tips
 - svg best practice

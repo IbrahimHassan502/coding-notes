@@ -725,7 +725,7 @@
     <!-- ======== async VS defer ends ======== -->
 
     <!-- ======== .addEventListener VS .onEvent starts ======== -->
-    <section>
+    <article>
       <div class="container grid">
         <h3>.addEventListener</h3>
         <h3>.onEvent (i.e onClick)</h3>
@@ -754,11 +754,11 @@
         </div>
         <div class="box">onclick works in all browsers.</div>
       </div>
-    </section>
+    </article>
     <!-- ======== .addEventListener VS .onEvent ends ======== -->
 
     <!-- ======== event propagation starts ======== -->
-    <section id="event-propgation">
+    <article id="event-propgation">
       <div class="container">
         <h2 class="main-heading">event propagatoin</h2>
         <div>
@@ -847,11 +847,11 @@
           </p>
         </div>
       </div>
-    </section>
+    </article>
     <!-- ======== event propagation ends ======== -->
 
     <!-- ======== extract true or false from truthy and falsy values starts ======== -->
-    <section>
+    <article>
       <div class="container">
         <h3>extract true or false from truthy and falsy</h3>
         <ul>
@@ -879,11 +879,11 @@
         </p>
         <p>console.log( <span class="code-btn">Boolean(our value)</span> )</p>
       </div>
-    </section>
+    </article>
     <!-- ======== extract true or false from truthy and falsy values ends ======== -->
 
     <!-- ======== logical or (||) & logical and (&&) starts ======== -->
-    <section>
+    <article>
       <div class="container">
         <h3>logical or (||) & logical and (&&) & short circuting</h3>
         <div>
@@ -949,11 +949,11 @@
           put it in here in order not to make this too long
         </p>
       </div>
-    </section>
+    </article>
     <!-- ======== logical or (||) & logical and (&&) ends ======== -->
 
     <!-- ======== operators starts ======== -->
-    <section>
+    <article>
       <div class="container">
         <div>
           <h3>Logical nullish assignment (??=)</h3>
@@ -982,11 +982,11 @@
           <img src="images/comma-operator.png" alt="" />
         </div>
       </div>
-    </section>
+    </article>
     <!-- ======== operators ends ======== -->
 
     <!-- ======== Curry Functions starts ======== -->
-    <section>
+    <article>
       <div class="container">
         <h3>Curry Functions</h3>
         <p>
@@ -1022,15 +1022,15 @@
         <img src="images/curry-function4.png" alt="" />
         <p>so it's like it tells you what's messing</p>
       </div>
-    </section>
+    </article>
     <!-- ======== Curry Functions ends ======== -->
 
     <!-- ======== strict mode starts ======== -->
-    <section id="strict-mode">
+    <article id="strict-mode">
       <div class="container">
-        <h3>strict mode</h3>
+        <h2 class="main-heading">strict mode</h2>
         <div>
-          <h4>invoking strict mode</h4>
+          <h3>invoking strict mode</h3>
           <ul>
             <li>
               either invoke it to a whole script by typing
@@ -1081,10 +1081,10 @@
           </ul>
         </div>
         <div>
-          <h4>benefits of strict mode</h4>
+          <h3>benefits of strict mode</h3>
           <ul class="big-items">
             <li>
-              <h5>Converting mistakes into errors</h5>
+              <h4>Converting mistakes into errors</h4>
               <ul>
                 <li>
                   First, strict mode makes it impossible to accidentally create
@@ -1185,8 +1185,30 @@
           </ul>
         </div>
       </div>
-    </section>
+    </article>
     <!-- ======== strict mode ends ======== -->
+
+    <!-- ======== problem solving starts ======== -->
+    <article class="problem-solving">
+      <div class="container">
+        <h2 class="main-heading">problem solving</h2>
+        <ol>
+          <li>
+            <h3>finding the closest date from array dates to a given date</h3>
+            <p>
+              problem link:
+              <a href="https://edabit.com/challenge/HmXdhA9WA9uLnsuiB">
+                edabit: What's the Closest Major Event?
+              </a>
+            </p>
+            <img src="images/problem-solving1-myway.png" alt="" />
+            <img src="images/problem-solving1-bestway.png" alt="" />
+            <img src="images/problem-solving1-timeDifference.png" alt="" />
+          </li>
+        </ol>
+      </div>
+    </article>
+    <!-- ======== problem ends ======== -->
 
     <!-- ======== elzero 2022 starts ======== -->
     <article class="elzero">
@@ -2602,11 +2624,341 @@
         </section>
 
         <section>
-          <h3></h3>
+          <h3>87 - Get Set Elements Content And</h3>
+          <div>
+            <img src="images/lesson87-div.png" alt="" />
+            <p>if you use with the div above:</p>
+            <p>
+              <span class="code-btn">.innerHtml</span>
+              it returns whatever html in the div
+            </p>
+            <img src="images/lesson87-innerHtml.png" alt="" />
+            <p>
+              <span class="code-btn">.innerText</span>
+              it returns just the text inside of it and interprets the html tags
+            </p>
+            <img src="images/lesson87-innerText.png" alt="" />
+            <p>
+              if you notice: innerHtml and innerText are properties so you can
+              set them as well
+            </p>
+            <p>
+              <span class="code-btn">
+                myDiv.innerHtml = "text from &lt;span&gt; js &lt;/span&gt; file"
+              </span>
+            </p>
+            <p>
+              the result is <br />
+              <span class="code-btn">text from js file</span>
+            </p>
+            <p>
+              <span class="code-btn">
+                myDiv.innertext = "text from &lt;span&gt; js &lt;/span&gt; file"
+              </span>
+            </p>
+            <p>
+              the result is <br />
+              <span class="code-btn">
+                text from &lt;span&gt; js &lt;/span&gt; file
+              </span>
+            </p>
+            <p class="bg-second-color">
+              so you can easly type html tags with js instead of typing html
+              entities like "& lt" and "& gt"
+            </p>
+          </div>
+          <div>
+            to access the document images
+            <p>
+              <span class="code-btn">document.images</span> => returns an html
+              collection that you can handle like an array
+              (document.images[0].alt)
+            </p>
+            <p>you can get and set attributes</p>
+            <p>
+              <span class="code-btn">
+                document.images[0].src = https//:google.com
+              </span>
+            </p>
+            <p>
+              and if you type an attribute that is not in the img it will add it
+            </p>
+            <p class="bg-second-color">
+              to add class attribute documnet.images[0].<span class="code-btn">
+                className
+              </span>
+            </p>
+            <p class="bg-second-color">
+              all these things can be done to any element
+            </p>
+          </div>
+          <div>
+            <span class="code-btn"> myElemnt.getAttribute("class") </span> gets
+            you the attribute between the ("")
+          </div>
+          <div>
+            <span class="code-btn">
+              myElemnt.setAttribute("class", "updated")
+            </span>
+            sets the attribute (first parameter) to the new value (second
+            parameter)
+          </div>
         </section>
 
         <section>
-          <h3></h3>
+          <h3>88 - Check Attributes And Examples</h3>
+          <div>
+            <span class="code-btn">myElement.attributes</span> returns a NodeMap
+            with all the attributes in the element that you can handle like an
+            array
+            <p class="bg-second-color">
+              note that there's no () after .attributes
+            </p>
+          </div>
+          <div>
+            <span class="code-btn">myElement.hasAttribute('class')</span>
+            returns ture of false depending on whether the element has the given
+            attribute (class in this example) or not
+          </div>
+          <div>
+            <span class="code-btn">myElement.removeAttribute('class')</span>
+            removes the attribute from the element
+            <p class="bg-second-color">
+              notice that it removes the attribute from the element not just
+              setting the attribute to ""
+            </p>
+          </div>
+          <div>
+            <span class="code-btn">myElement.hasAttributes()</span> returns true
+            or false dependingon wheather the element has any attributes or not
+            <p class="bg-second-color">
+              notice they are attribute"s" (plural) not attribute
+            </p>
+            <p class="bg-second-color">
+              also you don't type anything in the ()
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>89 - Create And Append Elements</h3>
+          <div>
+            <span class="code-btn">
+              myElement = document.createElement('div')
+            </span>
+            to create an element (div in the example)
+            <p class="bg-second-color">
+              notice that it just creates the element but doesn't add it to the
+              body untill you add it (using .appendChild() or any other method)
+            </p>
+          </div>
+          <div>
+            <span class="code-btn">
+              myText = document.createTextNode('this is just text')
+            </span>
+            to create text
+            <p class="bg-second-color">
+              again this is just a text it's not added to any element yet
+            </p>
+          </div>
+          <div>
+            <span class="code-btn">
+              myComment = document.createComment('this is comment')
+            </span>
+          </div>
+          <div>
+            <p>
+              <span class="code-btn">
+                myAttr = document.createAttribute('data-custom')
+              </span>
+              to craete an attribute
+            </p>
+          </div>
+          <div>
+            to add the careated attribute to an element
+            <p>
+              <span class="code-btn">myElement.setAttributeNode(myAtt)</span>
+            </p>
+            <p class="bg-second-color">
+              <span class="code-btn">.setAttributeNode()</span> accepts
+              <b>only</b> created attributes, if you pass a text it throws an
+              error
+            </p>
+            <div class="bg-second-color">
+              <b>
+                difference between
+                <span class="code-btn">.setAttributeNode()</span>
+                and
+                <span class="code-btn">.setAttribute()</span>
+              </b>
+              <ol>
+                <li>
+                  in setAttribute() you need to type the value of the attribute
+                  you are setting while in set attributeNode() you add just the
+                  attribute without a vlaue
+                </li>
+                <li>
+                  setAttribute() doesn't accept created attribute and
+                  setAttributeNode() doesn't accept text
+                  <p>
+                    <b>but notice</b> that you can pass a string variable to
+                    setAttribute() and it won't cause any errors
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div>
+              to add a child inside an element
+              <p>
+                <span class="code-btn">myElement.appendChild(theElement)</span>
+              </p>
+              <p class="bg-second-color">
+                with <span class="code-btn">.appendChild()</span> you can add
+                the text node and the comment you created in the above example
+                to the div and then add the div to the body
+              </p>
+              <p>
+                <span class="code-btn">document.body.appendChild(myDiv)</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>90 - Product With Title And Description</h3>
+          no notes needed
+        </section>
+
+        <section>
+          <h3>91 - Deal With Children's</h3>
+          <div>
+            children are 2 types
+            <p>elements</p>
+            <ul>
+              <li>&lt;p&gt;</li>
+              <li>&lt;img&gt;</li>
+              <li>&lt;span&gt;</li>
+            </ul>
+            <p>and nodes</p>
+            <ul>
+              <li>text</li>
+              <li>spaces (consdered as text)</li>
+              <li>comments</li>
+            </ul>
+          </div>
+          <div>
+            <span class="code-btn">myElement.children</span> to get all
+            "element" <b>(not all children)</b>
+            children of an element (myElement in this example)
+          </div>
+          <div>
+            <span class="code-btn">myElement.childNodes</span> to get all
+            children of the element (nodes and elements)
+          </div>
+          <div>
+            <img src="images/children-elements-vs-nodes.png" alt="" />
+            <p>so in this div</p>
+            <p>
+              <span class="code-btn">myElement.children</span> =>
+              htmlcollection(2) [p, span]
+            </p>
+            <p>
+              <span class="code-btn">myElement.childNodes</span> =>
+              htmlcollection(13)
+            </p>
+            <ul>
+              <li>text (space)</li>
+              <li>text (space)</li>
+              <li>text (hello)</li>
+              <li>text (space)</li>
+              <li>text (space)</li>
+              <li>p</li>
+              <li>text (space)</li>
+              <li>comment</li>
+              <li>text (space)</li>
+              <li>text (and)</li>
+              <li>text (space)</li>
+              <li>span</li>
+            </ul>
+          </div>
+          <div>
+            <span class="code-btn"> myElement.firstChild </span>
+            to get whatever the first child in the element is (node or element)
+          </div>
+          <div>
+            <span class="code-btn"> myElement.firstElementChild </span>
+            to get the first element child in the element
+          </div>
+          <div>
+            <span class="code-btn">myElement.lastChild</span> to get whatever
+            last child of the element is (node or element)
+          </div>
+          <div>
+            <span class="code-btn">myElement.lastElementChild</span>
+            to get the last element child in the element
+          </div>
+        </section>
+        <section>
+          <h3>92 - DOM Events</h3>
+          <div>
+            <p>there are 2 ways to use events</p>
+            <ol>
+              <li>
+                in html code
+                <span class="code-btn">
+                  &lt;button <b>onclick = 'someFunciton()'</b>&gt;
+                </span>
+              </li>
+              <li>
+                in javascript
+                <span class="code-btn">
+                  myButton<b>.onclick</b> = function() {//some code here}
+                </span>
+              </li>
+            </ol>
+          </div>
+          <div>
+            events mentioned in the lesson
+            <ul>
+              <li>onclick</li>
+              <li>oncontextmenu</li>
+              <li>onmouseenter</li>
+              <li>onmouseleave</li>
+              <li>onload</li>
+              <li>onscroll</li>
+              <li>onresize</li>
+              <li>
+                <span class="second-color">onfocus</span> => when click on the
+                input filed and the typing indicator apppears
+              </li>
+              <li>
+                <span class="second-color">onblur</span> => when you leave input
+                field
+              </li>
+              <li>onsubmit => used with forms</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>93 - Validate Form And Prevent Default</h3>
+          <p>
+            <span class="code-btn">
+              myButton.onclick = function (e) {<b>e.preventDefault()</b>}
+            </span>
+            to prevent the default behaviour of the function
+          </p>
+          <p>
+            you can pass any argument name you want (event or e or whatever)
+          </p>
+          <p>rest of the lesson doesn't need notes to be taken</p>
+        </section>
+
+        <section class="test">
+          <form action="">
+            <input type="number" name="dollar" placeholder="USD Dollar" />
+            <div class="result">{0} USD Dollar = {0} Egyptian Pound</div>
+          </form>
         </section>
       </div>
       <!-- container -->
