@@ -1,5 +1,8 @@
 
 - strict mode in react ? or js ? => js
+- object
+- difference between html collection & nodeList
+- difference between innerText & text-content
 - clean code
 - css,html,js bes practice tips
 - svg best practice

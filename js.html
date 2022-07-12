@@ -1026,93 +1026,164 @@
     <!-- ======== Curry Functions ends ======== -->
 
     <!-- ======== strict mode starts ======== -->
-    <section>
-      <h3>strict mode</h3>
-      <div>
-        <h4>invoking strict mode</h4>
-        <ul>
-          <li>
-            either invoke it to a whole script by typing
-            <span class="code-btn">"use strict";</span>
-            before any other statement in the code
-          </li>
-          <li>
-            or invoke it to a piece of code like
-            <span class="second-color">
-              (eval code, Function code, event handler attributes, strings
-              passed to setTimeout())
-            </span>
-            by typing
-            <span class="code-btn">"use strict";</span>
-            in the function's body before any other statements.
-            <img src="images/function-use-strict.png" alt="" />
-          </li>
-          <li>
-            and according to
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
-            >
-              MDN
-            </a>
-            <p class="bg-second-color">
-              <q>
-                The entire contents of JavaScript <b>modules</b> are
-                automatically in strict mode, with no statement needed to
-                initiate it.
-              </q>
-            </p>
-          </li>
-          <li>
-            also according to
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
-            >
-              MDN
-            </a>
-            <p class="bg-second-color">
-              <q>
-                All parts of ECMAScript <b>classes</b> are strict mode code,
-                including both class declarations and class expressions —
-                and so also including all parts of class bodies.
-              </q>
-            </p>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h4>benefits of strict mode</h4>
-        <ul class="big-items">
-          <li>
-            <h5>Converting mistakes into errors</h5>
-            <p>
-              First, strict mode makes it impossible to accidentally create
-              global variables. In normal JavaScript mistyping a variable in
-              an assignment creates a new property on the global object
-              (adding the mistyped variable as a property to the window
-              object) and continues to "work" (although future failure is
-              possible: likely, in modern JavaScript). Assignments, which
-              would accidentally create global variables, instead throw an
-              error in strict mode:
-              <img src="images/use-strict-mistyped-variable.png" alt="" />
-            </p>
-            <p>
-              Second, strict mode makes assignments which would otherwise
-              silently fail to throw an exception.
-            </p>
-            <p>
-              silent fail assignments:
+    <section id="strict-mode">
+      <div class="container">
+        <h3>strict mode</h3>
+        <div>
+          <h4>invoking strict mode</h4>
+          <ul>
+            <li>
+              either invoke it to a whole script by typing
+              <span class="code-btn">"use strict";</span>
+              before any other statement in the code
+            </li>
+            <li>
+              or invoke it to a piece of code like
+              <span class="second-color">
+                (eval code, Function code, event handler attributes, strings
+                passed to setTimeout())
+              </span>
+              by typing
+              <span class="code-btn">"use strict";</span>
+              in the function's body before any other statements.
+              <img src="images/function-use-strict.png" alt="" />
+            </li>
+            <li>
+              and according to
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
+              >
+                MDN
+              </a>
+              <p class="bg-second-color">
+                <q>
+                  The entire contents of JavaScript <b>modules</b> are
+                  automatically in strict mode, with no statement needed to
+                  initiate it.
+                </q>
+              </p>
+            </li>
+            <li>
+              also according to
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
+              >
+                MDN
+              </a>
+              <p class="bg-second-color">
+                <q>
+                  All parts of ECMAScript <b>classes</b> are strict mode code,
+                  including both class declarations and class expressions — and
+                  so also including all parts of class bodies.
+                </q>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>benefits of strict mode</h4>
+          <ul class="big-items">
+            <li>
+              <h5>Converting mistakes into errors</h5>
               <ul>
                 <li>
-                  assignment to a non-writable global or property. like assigning to
-                  <span class="code-btn">NaN</span>
+                  First, strict mode makes it impossible to accidentally create
+                  global variables. In normal JavaScript mistyping a variable in
+                  an assignment creates a new property on the global object
+                  (adding the mistyped variable as a property to the window
+                  object) and continues to "work" (although future failure is
+                  possible: likely, in modern JavaScript). Assignments, which
+                  would accidentally create global variables, instead throw an
+                  error in strict mode:
+                  <img src="images/use-strict-mistyped-variable.png" alt="" />
                 </li>
-                <li>assignment to a getter-only property</li>
-                <li>assignment to a new property on a non-extensible object</li>
+                <li>
+                  Second, strict mode makes assignments which would otherwise
+                  silently fail to throw an exception.
+                  <p>silent fail assignments:</p>
+                  <ul>
+                    <li>
+                      assignment to a non-writable global or property. like
+                      assigning to
+                      <span class="code-btn">NaN</span>
+                    </li>
+                    <li>assignment to a getter-only property</li>
+                    <li>
+                      assignment to a new property on a non-extensible object
+                    </li>
+                  </ul>
+                  <img src="images/use-strict-silent-errors.png" alt="" />
+                </li>
+                <li>
+                  third strict mode throws error when attempts to delete
+                  undeletaple properties are made (noramlly nothing happens)
+                  <p>
+                    <span class="code-btn">delete Object.prototype;</span> =>
+                    thrwos error
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    fourth unique function arguments: normally if you type 2
+                    identical arguments the last one is the one used when you
+                    call the arguments name but the first one is still available
+                    by useing
+                    <span class="code-bt">arguments[i]</span> so it's not
+                    completely deleted
+                  </p>
+                  <p>
+                    but strict mode throws
+                    <span class="second-color">syntax error</span> when the same
+                    argument name is used more than once in the function
+                  </p>
+                  <img
+                    src="images/use-strict-idenitical-argumnets.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  fifth (didin't undersatnd it that much but feels important so
+                  that's a copy past from
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
+                  >
+                    MDN
+                  </a>
+                  <p>
+                    Fifth, a strict mode in ECMAScript 5 forbids a 0-prefixed
+                    octal literal or octal escape sequence. Outside strict mode,
+                    a number beginning with a 0, such as 0644, is interpreted as
+                    an octal number (0644 === 420), if all digits are smaller
+                    than 8. Octal escape sequences, such as "\45", which is
+                    equal to "%", can be used to represent characters by
+                    extended-ASCII character code numbers in octal. In strict
+                    mode, this is a syntax error. In ECMAScript 2015, octal
+                    literals are supported by prefixing a number with "0o"; for
+                    example:
+                  </p>
+                  <p>
+                    <span class="code-btn">var a = 0o10;</span> => ES2015: Octal
+                  </p>
+                  <p>
+                    Novice developers sometimes believe a leading zero prefix
+                    has no semantic meaning, so they might use it as an
+                    alignment device — but this changes the number's meaning! A
+                    leading zero syntax for the octal is rarely useful and can
+                    be mistakenly used, so strict mode makes it a syntax error:
+                  </p>
+                  <img src="images/use-strict-octal.png" alt="" />
+                </li>
+                <li>
+                  Sixth, strict mode in ECMAScript 2015 forbids setting
+                  properties on primitive values. Without strict mode, setting
+                  properties is ignored (no-op), with strict mode, however, a
+                  TypeError is thrown.
+                  <img src="" alt="" />
+                </li>
               </ul>
-              <img src="images/use-strict-silent-errors.png" alt="">
-            </p>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <!-- ======== strict mode ends ======== -->
@@ -2404,8 +2475,134 @@
             "this" is written in
           </p>
           <p class="bg-second-color">
-            note that "this" changes in <b>strict mode</b>
+            note that "this" changes in
+            <a href="#strict-mode">strict mode</a>
           </p>
+        </section>
+
+        <section>
+          <h3>84 - Create Object With Create Method</h3>
+          <p>
+            as far as I understood the idea of the
+            <span class="code-btn">Object.creat(some-object)</span>
+            is heritage
+          </p>
+          <img src="images/object-create-wrong-way.png" alt="" />
+          <img src="images/object-create-prototype.png" alt="" />
+          <p>
+            as you can see the properties and methods of the main object (car)
+            is in the prototype of the secondary object (typeA) which means all
+            properties and methods of the main object are available to the
+            secondary object
+          </p>
+          <p>
+            now you may want to either add another properties (futures of the
+            car) or methods like
+          </p>
+          <img src="images/object-create-update-properites.png" alt="" />
+          <p>
+            but if you notice in the other console.log() the method still
+            returns 8 not 6 (2 less doors) why is that ?
+          </p>
+          <p>
+            the mistake that happened here is that in the main object you typed
+            <span class="code-btn">"car".doors + car.wheels</span>
+            so where ever you call the method it's going to go the car object
+            and use it's information
+          </p>
+          <p>
+            the solution for that problem is simply use
+            <span class="code-btn">this</span>
+            keywrod
+          </p>
+          <img src="images/object-create-using-this.png" alt="" />
+          <p class="bg-second-color">
+            <b>note</b> the O in
+            <span class="code-btn">Object.create()</span> is a capital letter
+          </p>
+        </section>
+
+        <section>
+          <h3>85 - Create Object With Assign Method</h3>
+          <p>
+            <span class="code-btn">
+              Object.assign(target-object (to copy to), object (to copy from),
+              object (to copy from)
+            </span>
+          </p>
+          <p>
+            <span class="code-btn">
+              let newObj = Object.assign(obj3, obj1, obj2)
+            </span>
+          </p>
+          <p>it is used to copy objects to another object</p>
+          <p>
+            what the code above basically does is that it copies the 3 objects
+            into another object
+          </p>
+          <ul>
+            <li>
+              <p>
+                if you don't have a target object and you want to copy objects
+                into new object you just made. you simply type
+                <span class="code-btn">{}</span> in place of target object
+              </p>
+              <p>
+                <span class="code-btn">
+                  let newObj = Object.assign({}, obj1)
+                </span>
+              </p>
+            </li>
+            <li>
+              also you can add properties while coping other objects
+              <p>
+                <span class="code-btn">
+                  let newObj = Object.assign({}, obj1, {property1: 'hola',
+                  property2: 'hii'})
+                </span>
+              </p>
+            </li>
+          </ul>
+          <p>
+            if you have the same property in more than one object they simply
+            overwrite
+          </p>
+          <img src="images/object-assing-overwrite.png" alt="" />
+          <p>
+            the last added object had prop1 set to 1 so the final result is 1
+          </p>
+        </section>
+
+        <section>
+          <h3>86 - What Is DOM And Select Elements</h3>
+          <p>note the difference between</p>
+          <p>
+            <span class="code-btn"> document.querySelector() </span>
+          </p>
+          <p>and</p>
+          <p>
+            <span class="code-btn"> document.querySelectorAll() </span>
+          </p>
+          <p>the first method gets you the first element it finds</p>
+          <p>for example</p>
+          <p>
+            <span class="code-btn">
+              let myElement = document.querySelector('.some-class')
+            </span>
+          </p>
+          <p>will return the first element with the class "some-class"</p>
+          <p>
+            while
+            <span class="code-btn">
+              document.querySelectorAll('.some-class')
+            </span>
+          </p>
+          <p>will get you all elements having class "some-class"</p>
+          <p>no notes needed for the rest of the lesson</p>
+        </section>
+
+        <section>
+          <h3></h3>
         </section>
 
         <section>

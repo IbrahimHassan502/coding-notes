@@ -1,6 +1,4 @@
-"use strict";
-let matchHouses = (houseNum) => (houseNum > 0 ? houseNum * 6 - --houseNum : 0);
+let o = { p: 1, p: 2 };
 
-console.log(matchHouses(0));
-console.log(matchHouses(4));
-console.log(matchHouses(87));
+console.log(o.p);
+console.log(o);
