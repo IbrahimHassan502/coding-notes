@@ -68,6 +68,5 @@
 - keyboard accessability
 - authentication
 - css overflow values and it's uses
-
-
+- js typed array (personal interest)
 
